@@ -1,0 +1,2 @@
+//5000 is the port number kill specific port
+sudo kill -9 `sudo lsof -t -i:5000`
