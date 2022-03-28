@@ -1,0 +1,30 @@
+1.run command
+ 
+$sudo nano /etc/systemd/system/hp-keycodes.service
+
+2.paste this 
+
+[Unit]
+Description=HP setkeycodes fix
+
+[Service]
+Type=oneshot
+Restart=no
+RemainAfterExit=no
+ExecStart=/usr/bin/setkeycodes e057 240 e058 240
+
+[Install]
+WantedBy=rescue.target
+WantedBy=multi-user.target
+WantedBy=graphical.target
+
+3. Run thouse commang
+
+$ sudo systemctl daemon-reload
+$ sudo systemctl enable hp-keycodes.service
+$ sudo reboot
+
+==================================Finished============================
+info---
+Sakil tesed it 28-03-22
+
