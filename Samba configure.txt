@@ -1,0 +1,26 @@
+#Add the user
+cmd :##  useradd john
+	 ## passwd john
+     
+#Create Samba account
+	## smbpasswd -a john
+New SMB password:
+Retype new SMB password:
+
+#Configure samba
+	## vi /etc/samba/smb.conf
+[share1]
+   comment = A Shared Directory
+   path = /var/tmp/sharedir
+   valid users = anthony john
+   public = no
+   writable = yes
+
+#Restart samba
+	##systemctl restart smbd
+
+#Delete the user and samba user ##
+	## smbpasswd -x john
+	delete unix user(john) by userdel
+ #now delete the system user
+ 	## userdel -r john
