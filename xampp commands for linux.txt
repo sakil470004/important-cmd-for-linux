@@ -10,3 +10,6 @@ stop server -> sudo '/opt/lampp/xampp' start
 // start xampp control panel
 sudo /opt/lampp/manager-linux-x64.run
 
+//for start sql local command on command line 1st move to install dir and then start the command line server
+  cd /opt/lampp/bin
+  ./mysql  -u root -p -h 127.0.0.1
