@@ -8,37 +8,33 @@
         <li>To enable device cmd "xinput enable "device_name" [which device you want to enable]</li>
     </ol>
     <h3>Here is the example of some code which automated for this task by using "bash" </h3>
-    <pre>
-      <code>
-        #!/bin/bash
-        Icon="/home/mynul/.config/keybordShortcut/icon/keyboardon.png"
-        Icoff="/home/mynul/.config/keybordShortcut/icon/keyboardoff.png"
-        fconfig=".keyboard" 
-        devicename="Logitech USB Keyboard"
-        id=$(xinput list --id-only "$devicename")
-        
-        
-        if [ ! -f $fconfig ]; then
-          echo "Creating config file"
-          echo "enabled" > $fconfig
-          var="enabled"
-        else
-          read -r var< $fconfig
-          echo "keyboard is : $var"
-        fi
-        
-        if [ "$var" = "disabled" ]; then
-          notify-send -i $Icon "Enabling keyboard..." \ "ON - Keyboard connected !";
-          echo "enable keyboard..."
-          xinput enable $id
-          echo "enabled" > $fconfig
-        elif [ "$var" = "enabled" ]; then
-          notify-send -i $Icoff "Disabling Keyboard" \ "OFF - Keyboard disconnected";
-          echo "disable keyboard"
-          xinput disable $id
-          echo 'disabled' > $fconfig
-        fi
-  </code>
+ <pre> <code>
+#!/bin/bash
+Icon="/home/mynul/.config/keybordShortcut/icon/keyboardon.png"
+Icoff="/home/mynul/.config/keybordShortcut/icon/keyboardoff.png"
+fconfig=".keyboard" 
+devicename="Logitech USB Keyboard"
+id=$(xinput list --id-only "$devicename")
+if [ ! -f $fconfig ]; then
+  echo "Creating config file"
+  echo "enabled" > $fconfig
+    var="enabled"
+else
+  read -r var< $fconfig
+  echo "keyboard is : $var"
+  fi
+if [ "$var" = "disabled" ]; then
+  notify-send -i $Icon "Enabling keyboard..." \ "ON - Keyboard connected !";
+  echo "enable keyboard..."
+  xinput enable $id
+  echo "enabled" > $fconfig
+elif [ "$var" = "enabled" ]; then
+  notify-send -i $Icoff "Disabling Keyboard" \ "OFF - Keyboard disconnected";
+  echo "disable keyboard"
+  xinput disable $id
+  echo 'disabled' > $fconfig
+fi
+ </code>
 </pre>
 <h4>Here "Logitech USB Keyboard" is my keyboard name </h4>
 <hr/>
