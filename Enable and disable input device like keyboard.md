@@ -41,6 +41,7 @@
   </code>
 </pre>
 <h4>Here "Logitech USB Keyboard" is my keyboard name </h4>
+<hr/>
 <ol>
 <li>To run the bash file 1st save copy code as 'test.sh' </li>
 <li>Run the file using this command 'bash test.sh'</li>
