@@ -1,4 +1,4 @@
-  <h1>Enable and disable input device like mouse</h1>
+  <h1>Enable and disable input device like keyboard</h1>
     <hr />
     <ol>
         <li>We are using "xinput" here</li>
