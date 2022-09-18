@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<!-- saved from url=(0127)https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ -->
+<html dir="ltr" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./Linux Add a Swap File Tutorial - nixCraft_files/analytics.js" nonce="-Ig9Vja0vtSRL8FWA_KdUQ"></script><script type="text/javascript" async="" src="./Linux Add a Swap File Tutorial - nixCraft_files/js" nonce="-Ig9Vja0vtSRL8FWA_KdUQ"></script><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="./Linux Add a Swap File Tutorial - nixCraft_files/icons.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" onerror="this.removeAttribute(&#39;data-rocket-async&#39;)" rel="stylesheet">
+<link href="./Linux Add a Swap File Tutorial - nixCraft_files/css.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" onerror="this.removeAttribute(&#39;data-rocket-async&#39;)" rel="stylesheet">
+<title>Linux Add a Swap File Tutorial - nixCraft</title>
+<link href="https://www.cyberciti.com/faq/feed/" rel="alternate" type="application/rss+xml" title="nixCraft feed">
+<link href="https://www.cyberciti.biz/faq/wp-content/themes/thesis/lib/images/favicon.ico" rel="shortcut icon">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+<meta name="description" content="Explains how to add a swap file under any Linux distribution using command line utilities and update /etc/fstab file.">
+<link rel="canonical" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux Add a Swap File Tutorial">
+<meta property="og:description" content="Explains how to add a swap file under any Linux distribution using command line utilities and update /etc/fstab file.">
+<meta property="og:url" content="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/">
+<meta property="og:site_name" content="nixCraft">
+<meta property="article:publisher" content="https://facebook.com/nixcraft">
+<meta property="article:author" content="https://facebook.com/nixcraft">
+<meta property="article:published_time" content="2006-05-18T16:14:00+00:00">
+<meta property="article:modified_time" content="2022-08-25T09:59:14+00:00">
+<meta property="og:image" content="https://www.cyberciti.biz/media/new/faq/2006/05/Linux-add-a-swap-space-commands.jpg">
+<meta name="author" content="Vivek Gite">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@https://twitter.com/nixcraft">
+<meta name="twitter:site" content="@nixcraft">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Vivek Gite">
+<meta name="twitter:label2" content="Est. reading time">
+<meta name="twitter:data2" content="5 minutes">
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/#article","isPartOf":{"@id":"https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/"},"author":{"name":"Vivek Gite","@id":"https://www.cyberciti.biz/faq/#/schema/person/10a0329482f8543fae00407f1446b761"},"headline":"Linux Add a Swap File Tutorial","datePublished":"2006-05-18T16:14:00+00:00","dateModified":"2022-08-25T09:59:14+00:00","mainEntityOfPage":{"@id":"https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/"},"wordCount":655,"commentCount":53,"publisher":{"@id":"https://www.cyberciti.biz/faq/#/schema/person/10a0329482f8543fae00407f1446b761"},"image":{"@id":"https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/#primaryimage"},"thumbnailUrl":"https://www.cyberciti.biz/media/new/faq/2006/05/Linux-add-a-swap-space-commands.jpg","keywords":["Intermediate"],"articleSection":["Linux","RedHat and Friends","Suse","Ubuntu Linux"],"inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/#respond"]}]},{"@type":"WebPage","@id":"https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/","url":"https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/","name":"Linux Add a Swap File Tutorial - nixCraft","isPartOf":{"@id":"https://www.cyberciti.biz/faq/#website"},"primaryImageOfPage":{"@id":"https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/#primaryimage"},"image":{"@id":"https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/#primaryimage"},"thumbnailUrl":"https://www.cyberciti.biz/media/new/faq/2006/05/Linux-add-a-swap-space-commands.jpg","datePublished":"2006-05-18T16:14:00+00:00","dateModified":"2022-08-25T09:59:14+00:00","description":"Explains how to add a swap file under any Linux distribution using command line utilities and update /etc/fstab file.","breadcrumb":{"@id":"https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/#primaryimage","url":"https://www.cyberciti.biz/media/new/faq/2006/05/Linux-add-a-swap-space-commands.jpg","contentUrl":"https://www.cyberciti.biz/media/new/faq/2006/05/Linux-add-a-swap-space-commands.jpg","width":599,"height":426,"caption":"Linux add a swap space commands"},{"@type":"BreadcrumbList","@id":"https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.cyberciti.biz/faq/"},{"@type":"ListItem","position":2,"name":"Linux Add a Swap File Tutorial"}]},{"@type":"WebSite","@id":"https://www.cyberciti.biz/faq/#website","url":"https://www.cyberciti.biz/faq/","name":"nixCraft","description":"Linux / Unix tutorials for new and seasoned sysadmin || developers","publisher":{"@id":"https://www.cyberciti.biz/faq/#/schema/person/10a0329482f8543fae00407f1446b761"},"inLanguage":"en-US"},{"@type":["Person","Organization"],"@id":"https://www.cyberciti.biz/faq/#/schema/person/10a0329482f8543fae00407f1446b761","name":"Vivek Gite","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.cyberciti.biz/faq/#/schema/person/image/","url":"https://www.cyberciti.biz/media/new/faq/2017/04/new-nixcraft-logo.png","contentUrl":"https://www.cyberciti.biz/media/new/faq/2017/04/new-nixcraft-logo.png","width":42,"height":46,"caption":"Vivek Gite"},"logo":{"@id":"https://www.cyberciti.biz/faq/#/schema/person/image/"},"description":"Vivek Gite is the founder of nixCraft, the oldest running blog about Linux and open source. He wrote more than 7k+ posts and helped numerous readers to master IT topics. Join the nixCraft community via RSS Feed, Email Newsletter or follow on Twitter.","sameAs":["https://vivekgite.com/","https://facebook.com/nixcraft","https://www.instagram.com/nixcraft/","https://twitter.com/https://twitter.com/nixcraft","https://www.youtube.com/channel/UCrinGwmzp-LNcfvDeoBLAYQ","https://nixcraft.tumblr.com/"],"url":"https://www.cyberciti.biz/faq/author/administrator/"}]}</script>
+
+<link rel="alternate" type="application/rss+xml" title="nixCraft » Linux Add a Swap File Tutorial Comments Feed" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/feed/">
+<style id="rocket-lazyload-inline-css" type="text/css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://www.cyberciti.biz/faq/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<link rel="icon" href="https://www.cyberciti.biz/media/new/faq/2018/11/new_icon_amp.png" sizes="32x32">
+<link rel="icon" href="https://www.cyberciti.biz/media/new/faq/2018/11/new_icon_amp.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://www.cyberciti.biz/media/new/faq/2018/11/new_icon_amp.png">
+<meta name="msapplication-TileImage" content="https://www.cyberciti.biz/media/new/faq/2018/11/new_icon_amp.png">
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script>
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script><script async="" src="./Linux Add a Swap File Tutorial - nixCraft_files/f.txt" crossorigin="anonymous"></script> <script async="" src="./Linux Add a Swap File Tutorial - nixCraft_files/pub-7825705102693166" nonce="-Ig9Vja0vtSRL8FWA_KdUQ"></script><script nonce="-Ig9Vja0vtSRL8FWA_KdUQ">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+<link href="./Linux Add a Swap File Tutorial - nixCraft_files/comment-reply.min.js" rel="preload" as="script"><link href="./Linux Add a Swap File Tutorial - nixCraft_files/akismet-frontend.js" rel="preload" as="script"><link href="./Linux Add a Swap File Tutorial - nixCraft_files/f.txt" rel="preload" as="script" crossorigin="anonymous"><link href="./Linux Add a Swap File Tutorial - nixCraft_files/pub-7825705102693166" rel="preload" as="script"><link href="./Linux Add a Swap File Tutorial - nixCraft_files/f.txt" rel="preload" as="script" crossorigin="anonymous"><link href="./Linux Add a Swap File Tutorial - nixCraft_files/f.txt" rel="preload" as="script" crossorigin="anonymous"><link href="./Linux Add a Swap File Tutorial - nixCraft_files/f.txt" rel="preload" as="script" crossorigin="anonymous"><link href="./Linux Add a Swap File Tutorial - nixCraft_files/f.txt" rel="preload" as="script" crossorigin="anonymous"><link href="./Linux Add a Swap File Tutorial - nixCraft_files/js(1)" rel="preload" as="script"><link href="https://pagead2.googlesyndication.com/" rel="preconnect" crossorigin="anonymous"><link href="https://fundingchoicesmessages.google.com/" rel="preconnect"><link href="https://www.googletagmanager.com/" rel="preconnect"><script async="" src="./Linux Add a Swap File Tutorial - nixCraft_files/AGSKWxVE-VguhahFyLnWjYhsi-d3mfEVCdMjS7Ru730QUOr0bnBarMue7gXMsbgdvPHs8fIz4Bs7vAknN4f62yLt7no=" nonce="-Ig9Vja0vtSRL8FWA_KdUQ"></script><script async="" src="./Linux Add a Swap File Tutorial - nixCraft_files/AGSKWxVxHz1KoPtcm6BejYHAjbfNmUo0_ic2Qiln-oRzR0ju2-KMuwppTZODyWt3iFw30hJ2YRKqlaNsYTuw2r2M-03BB3B_Pk_yGZ_nj57iKpuCY7ADfBf-RSMTY-IVOijctPJpOOCacQ==" nonce="-Ig9Vja0vtSRL8FWA_KdUQ"></script><script async="" src="./Linux Add a Swap File Tutorial - nixCraft_files/AGSKWxVoI6GPOfZitWOBfH_oTs3i8NBSxGL_X-uqyFhUpsAV-6xQX_OnLr0rmN5GAnCsuVtdddlwXXjpH6z3Ot3teYgEAH2wLOvUEN-nHDHR9IEve2VUq_JBMhrzOE1JzZmvosuRog03ng==" nonce="-Ig9Vja0vtSRL8FWA_KdUQ"></script><script async="" src="./Linux Add a Swap File Tutorial - nixCraft_files/AGSKWxUjM7iDWwb0U_z7PXzWVmuGO7loD-bMMQ5CeROgt1F93-UAE4Qy2jnYyoMWcO5M5inWxM5TUcKZ9SdKzpNuTATbxDdBJ4qnLv9HV5ghoYT8k5uAsCA9tveifrXuZ_dUFBshh6rcSg==" nonce="-Ig9Vja0vtSRL8FWA_KdUQ"></script></head>
+<body class="template-single has-sidebar" cz-shortcut-listen="true">
+<div id="header">
+<div class="container">
+<center> <div id="site_title" class="has-logo"><a href="https://www.cyberciti.biz/faq/"><img id="logo" src="./Linux Add a Swap File Tutorial - nixCraft_files/new-nixcraft-logo-cyberciti.webp" alt="nixCraft" width="42" height="46" data-lazy-src="https://www.cyberciti.biz/media/new/faq/2017/06/new-nixcraft-logo-cyberciti.biz_.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img id="logo" src="https://www.cyberciti.biz/media/new/faq/2017/06/new-nixcraft-logo-cyberciti.biz_.png" alt="nixCraft" width="42" height="46" /></noscript></a></div>
+</center> </div>
+</div>
+<nav id="nav">
+<div class="container">
+<center> <div class="crumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+<span class="crumbs-crumb crumbs-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+<a href="https://www.cyberciti.biz/" itemprop="item"><span itemprop="name">nixCraft</span></a>
+<meta itemprop="position" content="1">
+</span>
+<span class="crumbs-sep crumbs-item">→</span>
+<span class="crumbs-crumb crumbs-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+<a href="https://www.cyberciti.biz/faq/" class="crumbs-home" itemprop="item"><span itemprop="name">Howto</span></a>
+<meta itemprop="position" content="2">
+</span>
+<span class="crumbs-sep crumbs-item">→</span>
+<span class="crumbs-crumb crumbs-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+<a href="https://www.cyberciti.biz/faq/category/linux/" itemprop="item"><span itemprop="name">Linux</span></a>
+<meta itemprop="position" content="3">
+</span>
+<span class="crumbs-sep crumbs-item">→</span>
+<span class="crumbs-crumb crumbs-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+<span itemprop="name">How to add a swap file on Linux</span>
+<meta itemprop="position" content="4">
+</span>
+</div>
+</center> </div>
+</nav>
+<div id="content">
+<div class="container columns">
+<div class="content grt">
+<article id="post-243" class="post_box text top">
+<div class="headline_area">
+<h1 class="headline"><a href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/" rel="bookmark">Linux Add a Swap File Tutorial</a></h1>
+<div class="byline">
+<span class="post_author_intro">Author:</span> <span class="post_author">Vivek Gite</span>
+<span class="post_date_intro">Last updated:</span> <span class="post_date date_modified" title="2022-08-25">August 25, 2022</span>
+<a class="num_comments_link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/#comments" rel="nofollow"><span class="num_comments">53</span> comments</a>
+</div>
+</div>
+<div class="post_content">
+<div style="float: right; margin-top: 0; margin-left: 5px;"><a title="See all GNU/Linux related FAQ" href="https://www.cyberciti.biz/faq/category/linux/"><img width="128" height="128" src="./Linux Add a Swap File Tutorial - nixCraft_files/linux-logo.webp" alt="See all GNU/Linux related FAQ" border="0" data-lazy-src="https://www.cyberciti.biz/media/new/category/old/linux-logo.png" data-ll-status="loaded" class="entered lazyloaded"><noscript><img  width="128" height="128" src="https://www.cyberciti.biz/media/new/category/old/linux-logo.png" alt="See all GNU/Linux related FAQ" border="0" /></noscript></a></div><span class="drop_cap">I</span> need additional swap space to improve my Linux server/desktop system performance. How do I add a swap file to Linux system using command line options without creating a new partitions?<br>
+<span id="more-243"></span><br>
+In Linux, as in most other Unix-like operating systems, it is common to use a whole partition of a hard disk for swapping. However, with the 2.6 Linux kernel, swap files are just as fast as swap partitions, although I recommend using a swap partition. The administrative flexibility of swap files outweighs that of partitions; since modern high capacity hard drives can remap physical sectors, no partition is guaranteed to be contiguous. You can add swap file as a dedicated partition or use following instructions to create a swap file.<br>
+<style>
+table.tutorialrequirements {
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+}
+table.tutorialrequirements td, table.tutorialrequirements th {
+  padding: 5px 5px;
+}
+table.tutorialrequirements tr:nth-child(even) {
+  background: #f7f7f7;
+}
+table.tutorialrequirements thead {
+  background: #f7f7f7;
+}
+table.tutorialrequirements thead th {
+  font-weight: bold;
+  text-align: center;
+}
+</style>
+<table class="tutorialrequirements">
+<thead><tr>
+<th colspan="2">Tutorial details</th>
+</tr></thead> <tbody><tr> <td width="25%"><a name="tutorial_difficulty_level"></a><span title="The relative difficulty of completing this tutorial task">Difficulty level</span></td> <td width="75%"><a href="https://www.cyberciti.biz/faq/tag/intermediate/" title="See all Intermediate Linux / Unix System Administrator Tutorials">Intermediate</a></td> </tr> <tr> <td><a name="tutorial_difficulty_level"></a><span title="Indicates whether the root account requires for administrative purposes to complete this tutorial">Root privileges</span></td> <td><a href="https://www.cyberciti.biz/faq/how-can-i-log-in-as-root/" title="See how to login as root user">Yes</a></td> </tr> <tr> <td><a name="tutorial_difficulty_requirements"></a><span title="Minimum requirements to complete this tutorial">Requirements</span></td> <td>Linux terminal</td> </tr> <tr> <td><a name="tutorial_os_compatibility"></a><span title="This tutorial is also compatible with the operating systems (OS) mentioned in the following column">OS compatibility</span></td> <td><span title="Alma Linux">Alma</span> <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/category/alpine-linux/" title="See all Alpine Linux tutorials">Alpine</a> <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/category/debian-ubuntu/" title="See all Debian Linux tutorials">Debian</a> <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/category/fedora-linux/" title="See all Fedora Linux Enterprise tutorials">Fedora</a> <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/category/linux/" title="See all Linux distributions tutorials">Linux</a> <span style="color: #828282;">•</span> Mint <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/tag/opensuse/" title="See all openSUSE Linux Enterprise tutorials">openSUSE</a> <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/category/redhat-and-friends/" title="See all RHEL (Red Hat Enterprise Linux) tutorials">RHEL</a> <span style="color: #828282;">•</span> Rocky <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/tag/centos-stream/" title="See all CentOS Stream Linux tutorials">Stream</a> <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/category/suse/" title="See all SUSE Linux Enterprise tutorials">SUSE</a> <span style="color: #828282;">•</span> <a href="https://www.cyberciti.biz/faq/category/ubuntu-linux/" title="See all Ubuntu Linux tutorials">Ubuntu</a></td> </tr></tbody> <tbody><tr> <td><a name="tutorial_est_reading_time"></a><span title="Estimated reading time for this tutorial page">Est. reading time</span></td> <td>5 minutes</td> </tr></tbody></table><div style="text-align: center;
+    background-color: rgb(247, 247, 247);
+    border: 1px solid rgb(243, 243, 243);
+    width: 100%;
+    padding-bottom: 18px;
+    clear: both;">
+<small style="text-transform: uppercase; color: rgb(204, 204, 204);">Advertisement</small><br>
+<script async="" src="./Linux Add a Swap File Tutorial - nixCraft_files/f.txt" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7825705102693166" data-ad-slot="7261197400" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<h2>Procedure To Add a Swap File Under Linux</h2>
+<p><img src="./Linux Add a Swap File Tutorial - nixCraft_files/Linux-add-a-swap-space-commands.webp" alt="Linux add a swap space commands" width="599" height="426" class="aligncenter size-full wp-image-149069 entered lazyloaded" data-lazy-srcset="https://www.cyberciti.biz/media/new/faq/2006/05/Linux-add-a-swap-space-commands.jpg 599w, https://www.cyberciti.biz/media/new/faq/2006/05/Linux-add-a-swap-space-commands-300x213.jpg 300w" data-lazy-sizes="(max-width: 599px) 100vw, 599px" data-lazy-src="https://www.cyberciti.biz/media/new/faq/2006/05/Linux-add-a-swap-space-commands.jpg" data-ll-status="loaded" sizes="(max-width: 599px) 100vw, 599px" srcset="https://www.cyberciti.biz/media/new/faq/2006/05/Linux-add-a-swap-space-commands.jpg 599w, https://www.cyberciti.biz/media/new/faq/2006/05/Linux-add-a-swap-space-commands-300x213.jpg 300w"><noscript><img src="https://www.cyberciti.biz/media/new/faq/2006/05/Linux-add-a-swap-space-commands.jpg" alt="Linux add a swap space commands" width="599" height="426" class="aligncenter size-full wp-image-149069" srcset="https://www.cyberciti.biz/media/new/faq/2006/05/Linux-add-a-swap-space-commands.jpg 599w, https://www.cyberciti.biz/media/new/faq/2006/05/Linux-add-a-swap-space-commands-300x213.jpg 300w" sizes="(max-width: 599px) 100vw, 599px" /></noscript><br>
+You need to use the <kbd>dd</kbd> command to create swap file. The <kbd>mkswap</kbd> command is used to set up a Linux swap area on a device or in a file.</p>
+<h3>Step 1 – Login as the Root User</h3>
+<p>Open a terminal window (select Applications &gt; Accessories &gt; Terminal) or login to remote server using the ssh client. Switch to the root user by typing <kbd>su -</kbd> (or <kbd>sudo -s</kbd>) and entering the root password, when prompted:<br>
+<code><span title="The shell prompt usually ends in a $ sign and is not part of the command for the nonprivileged user." class="normaluserprompt">$ </span>su -</code><br>
+OR<br>
+<code><span title="The shell prompt usually ends in a $ sign and is not part of the command for the nonprivileged user." class="normaluserprompt">$ </span>sudo -s </code></p>
+<h3>Step 2 – Create Storage File</h3>
+<p>Type the following command to create 512MB swap file (1024 * 512MB = 524288 block size):<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>dd if=/dev/zero of=/swapfile1 bs=1024 count=524288</code><br>
+Sample outputs:</p>
+<pre style="position: relative;">524288+0 records in
+524288+0 records out
+536870912 bytes (537 MB) copied, 3.23347 s, 166 MB/s<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+<p>Where,</p>
+<ol>
+<li><strong><kbd>if=/dev/zero</kbd></strong> : Read from /dev/zero file. /dev/zero is a special file in that provides as many null characters to build storage file called /swapfile1.</li>
+<li><strong><kbd>of=/swapfile1</kbd></strong> : Read from /dev/zero write storage file to /swapfile1. </li>
+<li><strong><kbd>bs=1024</kbd></strong> : Read and write 1024 BYTES bytes at a time.</li>
+<li><strong><kbd>count=524288</kbd></strong> : Copy only 523288 BLOCKS input blocks.</li>
+</ol>
+<h3>Step 3 – Secure swap file</h3>
+<p>Setup correct file permission for security reasons, enter:<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>chown root:root /swapfile1<br>
+<span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>chmod 0600 /swapfile1</code><br>
+A world-readable swap file is a huge local vulnerability. The above commands make sure only root user can read and write to the file. </p>
+<h3>Step 4 – Set up a Linux swap area</h3>
+<p>Type the following command to set up a Linux swap area in a file:<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>mkswap /swapfile1</code><br>
+Sample outputs:</p>
+<pre style="position: relative;">Setting up swapspace version 1, size = 524284 KiB
+no label, UUID=0e5e7c60-bbba-4089-a76c-2bb29c0f0839<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+<h3>Step 5 – Enabling the swap file</h3>
+<p>Finally, activate /swapfile1 swap space immediately, enter:<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>swapon /swapfile1</code></p>
+<h3>Step 6 – Update /etc/fstab file</h3>
+<p>To activate /swapfile1 after Linux system reboot, add entry to /etc/fstab file. Open this file using a text editor such as vi:<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>vi /etc/fstab</code><br>
+Append the following line:<br>
+<code>/swapfile1 none swap sw 0 0</code><br>
+Save and close the file. Next time Linux comes up after reboot, it enables the new swap file for you automatically.</p>
+<h2>How do I verify Linux swap file is activated or not?</h2>
+<p>Simply use the free command:<br>
+<code><span title="The shell prompt usually ends in a $ sign and is not part of the command for the nonprivileged user." class="normaluserprompt">$ </span>free -m</code></p>
+<pre style="position: relative;">             total       used       free     shared    buffers     cached
+Mem:          1876       1798         77          0        119       1440
+-/+ buffers/cache:        237       1638
+<strong><span style="color: rgb(0, 153, 0);">Swap:         4607          0       4607</span></strong><div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+<h3>How can I display swap usage summary on Linux?</h3>
+<p>Type the following swapon command:<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>swapon -s</code><br>
+Sample outputs:</p>
+<pre style="position: relative;">Filename				Type		Size	Used	Priority
+/dev/sda6                               partition	4194296	0	0
+<strong><span style="color: rgb(0, 153, 0);">/swapfile1                              file		524280	0	-1</span></strong>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+<p>Another option is to view /proc/meminfo file:<br>
+<code><span title="The shell prompt usually ends in a $ sign and is not part of the command for the nonprivileged user." class="normaluserprompt">$ </span>less /proc/meminfo<br>
+<span title="The shell prompt usually ends in a $ sign and is not part of the command for the nonprivileged user." class="normaluserprompt">$ </span><a href="https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/?utm_source=Linux_Unix_Command&amp;utm_medium=faq&amp;utm_campaign=nixcmd" "="" title="How to use grep command in Linux/ Unix with examples">grep</a> -i --color swap <kbd><span title="Linux or Unix /proc/meminfo file format">/proc/meminfo</span></kbd></code><br>
+Sample outputs:</p>
+<pre style="position: relative;">SwapCached:        30748 kB
+SwapTotal:       6291448 kB
+SwapFree:        6154008 kB<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+<p>You can also use top command, atop command, and/or htop command to display information about swap usage:<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>top<br>
+<span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>atop<br>
+<span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>htop</code><br>
+Sample outputs from a database server running on a CentOS Linux server:</p>
+<pre style="position: relative;">  1  [||                        3.9%]     Tasks: 171, 106 thr; 1 running
+  2  [                          0.0%]     Load average: 0.06 0.12 0.09 
+  3  [||                        2.0%]     Uptime: 22 days, 07:07:28
+  4  [                          0.0%]
+  5  [                          0.0%]
+  6  [                          0.0%]
+  7  [                          0.0%]
+  8  [                          0.0%]
+  <strong><span style="color: rgb(102, 51, 51);">Mem[||||||||||||||||||2112/11909MB]</span>
+</strong> <strong><span style="color: rgb(153, 102, 51);"> Swp[|                   134/6143MB]</span></strong>
+
+  PID USER      PRI  NI  VIRT   RES   SHR S CPU% MEM%   TIME+  Command
+ 8523 mysql      20   0 4545M  414M  4816 S  0.0  3.5  0:00.00 /usr/libexec/mysq
+ 8524 mysql      20   0 4545M  414M  4816 S  0.0  3.5  0:02.74 /usr/libexec/mysq
+ 8525 mysql      20   0 4545M  414M  4816 S  0.0  3.5  0:16.17 /usr/libexec/mysq
+ 8526 mysql      20   0 4545M  414M  4816 S  0.0  3.5  0:06.33 /usr/libexec/mysq
+ 8528 mysql      20   0 4545M  414M  4816 S  0.0  3.5  4:02.14 /usr/libexec/mysq
+ 8529 mysql      20   0 4545M  414M  4816 S  0.0  3.5  5:22.00 /usr/libexec/mysq
+ 8530 mysql      20   0 4545M  414M  4816 S  0.0  3.5  0:04.63 /usr/libexec/mysq
+ 8531 mysql      20   0 4545M  414M  4816 S  0.0  3.5  0:50.95 /usr/libexec/mysq
+ 8532 mysql      20   0 4545M  414M  4816 S  0.0  3.5  0:08.10 /usr/libexec/mysq
+ 9359 mysql      20   0 4545M  414M  4816 S  0.0  3.5 22:53.28 /usr/libexec/mysq
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+<h2>How can I disable devices and files for paging and swapping on Linux?</h2>
+<p>You need to use the swapoff command:<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>swapoff /swapfile1<br>
+<span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>swapon -s</code></p>
+<h2>How do I set swappiness on a Linux server?</h2>
+<p>The syntax is as follows for the sysctl command:<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>sysctl vm.swappiness=VALUE<br>
+<span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>sysctl vm.swappiness=20</code><br>
+OR<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>echo VALUE &gt; /proc/sys/vm/swappiness<br>
+<span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>echo 30 &gt; /proc/sys/vm/swappiness<br>
+</code><br>
+The value in <kbd>/proc/sys/vm/swappiness</kbd> file controls how aggressively the kernel will swap memory pages. Higher values increase agressiveness, lower values descrease aggressiveness. The default value is 60. To make changes permanent add the following line to <kbd>/etc/sysctl.conf</kbd>:<br>
+<code><span title="The root shell prompt end in a # sign and is not part of the command for the privileged/root user. Remember, with great power comes great responsibility." class="rootuserprompt"># </span>echo 'vm.swappiness=30' &gt;&gt; /etc/sysctl.conf</code></p>
+<h2>Conclusion</h2>
+<p>You learned how to add swap file under Linux operating systems. Please see the following manaul pages on your Linux cloud server or machine using the <a href="https://bash.cyberciti.biz/guide/Man_command?utm_source=Linux_Unix_Command&amp;utm_medium=faq&amp;utm_campaign=nixcmd" "="" title="Man command - Linux Bash Shell Scripting Tutorial Wiki">man command</a>/info command or <a href="https://bash.cyberciti.biz/guide/Help_command?utm_source=Linux_Unix_Command&amp;utm_medium=faq&amp;utm_campaign=nixcmd" "="" title="Help command - Linux Bash Shell Scripting Tutorial Wiki">help command</a>:<br>
+<code><span title="The shell prompt usually ends in a $ sign and is not part of the command for the nonprivileged user." class="normaluserprompt">$ </span>man 'mkswap(8)'<br>
+<span title="The shell prompt usually ends in a $ sign and is not part of the command for the nonprivileged user." class="normaluserprompt">$ </span>man 'swapon(8)'<br>
+<span title="The shell prompt usually ends in a $ sign and is not part of the command for the nonprivileged user." class="normaluserprompt">$ </span>man 'dd(1)'<br>
+<span title="The shell prompt usually ends in a $ sign and is not part of the command for the nonprivileged user." class="normaluserprompt">$ </span>man 'free(1)'<br>
+<span title="The shell prompt usually ends in a $ sign and is not part of the command for the nonprivileged user." class="normaluserprompt">$ </span>man 'vmstat(1)'<br>
+<span title="The shell prompt usually ends in a $ sign and is not part of the command for the nonprivileged user." class="normaluserprompt">$ </span>man 'top(1)'</code><br>
+See also:</p>
+<ul>
+<li><a href="https://www.cyberciti.biz/tips/linux-display-system-hardware-status-information-gathered-from-proc-filesystem-in-easy-format.html">Linux display system hardware status information gathered from /proc filesystem in easy format (includes swap info)</a></li>
+</ul>
+<div style="border-radius: 1em; color: #828282; padding: 1em; background-color: #f7f7f7; border-top: 0.25em solid #adb7c0; border-bottom: 0.25em solid #adb7c0; font-size:15px;">This entry is <strong>1</strong> of <strong>10</strong> in the <strong>Linux and UNIX Swap File Management Tutorial</strong> series. Keep reading the rest of the series:<ol><li>Linux Add a Swap File</li><li><a title="How To Add Swap on FreeBSD Unix Systems" href="https://www.cyberciti.biz/faq/create-a-freebsd-swap-file/">FreeBSD Add a Swap File</a></li><li><a title="Ubuntu Linux Create and Add Swap File Tutorial" href="https://www.cyberciti.biz/faq/ubuntu-linux-create-add-swap-file/">Ubuntu Create and add a swap file</a></li><li><a title="How to add swap to AWS EC2/Lightsail Amazon Linux instance" href="https://www.cyberciti.biz/faq/how-to-add-swap-to-aws-ec2-lightsail-amazon-linux-instance/">Amazon Linux add a swap space file to EC2/Lightsail VM</a></li><li><a title="Linux: Should You Use Twice the Amount of Ram as Swap Space?" href="https://www.cyberciti.biz/tips/linux-swap-space.html">Should You Use Twice the Amount of Ram as Swap Space?</a></li><li><a title="How To Check Swap Usage Size and Utilization in Linux" href="https://www.cyberciti.biz/faq/linux-check-swap-usage-command/">Check Swap Usage Size and Utilization in Linux</a></li><li><a title="Linux Find Out What Process Are Using Swap Space" href="https://www.cyberciti.biz/faq/linux-which-process-is-using-swap/">Linux Find Out What Process Are Using Swap Space</a></li><li><a title="Linux Move swap space from one location to another location" href="https://www.cyberciti.biz/faq/ommand-to-move-swap-space/">Move swap space from one location to another location</a></li><li><a title="Solaris add a new swap file for database" href="https://www.cyberciti.biz/faq/howto-adding-new-swap-area/">Solaris add a new swap file for database</a></li><li><a title="HowTo: Check Swap Usage In IBM Aix Unix" href="https://www.cyberciti.biz/faq/howto-check-swap-space-usage-in-aix-command/">Check Swap Usage In IBM Aix Unix</a></li></ol></div>
+<p></p> </div>
+</article>
+<p class="author_description"><span class="author_description_intro">About the author:</span>
+Vivek Gite is the founder of nixCraft, the oldest running blog about Linux and open source. He wrote more than 7k+ posts and helped numerous readers to master IT topics. Join the nixCraft community via <a title="Get nixCraft updates using RSS feed" href="https://www.cyberciti.com/atom/atom.xml" rel="noopener" target="_blank">RSS Feed</a>, <a title="Get nixCraft updates using Email" href="https://newsletter.cyberciti.biz/subscription?f=1ojtmiv8892KQzyMsTF4YPr1pPSAhX2rq7Qfe5DiHMgXwKo892di4MTWyOdd976343rcNR6LhdG1f7k9H8929kMNMdWu3g" rel="noopener" target="_blank">Email Newsletter</a> or follow on <a title="The official account for nixCraft on Twitter" href="https://twitter.com/nixcraft" rel="noopener" target="_blank">Twitter</a>.
+<br><br>
+🥺 <span class="highlight">Was this helpful?</span> Please add <a href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#respond" title="Please add your comment below ↓ to show your appreciation or feedback to the author">a comment to show your appreciation or feedback</a> <strong>↓</strong>
+</p>
+<div>
+<center>
+<form method="GET" class="search-form" action="https://www.google.com/cse" target="_top">
+<div class="search-form-inner">
+<input name="cx" type="hidden" value="c8e444503670f107a">
+<input name="ie" type="hidden" value="UTF-8">
+<input class="nixcraftsearchbox" type="search" placeholder="🔎 To search, type &amp; hit enter..." name="q" required="">
+</div>
+</form>
+</center></div>
+
+<br>
+<div class="crp_related     crp-text-only"><span style="font-weight: bold;font-size: 20px;margin-bottom: 10px">Related Tutorials</span><div class="wp_rp_wrap"><div class="wp_rp_content"><ul class="related_post"><li><a class="wp_rp_thumbnail" href="https://www.cyberciti.biz/faq/ubuntu-linux-create-add-swap-file/?utm_source=Related_Tutorials&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP_IMAGE" "=""><img width="150" height="150" alt="Ubuntu Linux Create and Add Swap File Tutorial" data-lazy-src="https://www.cyberciti.biz/images/rp/13/19.jpg" class="entered lazyloaded" src="./Linux Add a Swap File Tutorial - nixCraft_files/19.webp" data-ll-status="loaded"><noscript><img width="150" height="150" alt="Ubuntu Linux Create and Add Swap File Tutorial" src="https://www.cyberciti.biz/images/rp/13/19.jpg"></noscript></a><a href="https://www.cyberciti.biz/faq/ubuntu-linux-create-add-swap-file/?utm_source=Related_Tutorials&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP_TEXT"><span class="crp_title">Ubuntu Linux Create and Add Swap File Tutorial</span></a></li><li><a class="wp_rp_thumbnail" href="https://www.cyberciti.biz/faq/howto-adding-new-swap-area/?utm_source=Related_Tutorials&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP_IMAGE" "=""><img width="96" height="96" alt="Solaris add a new swap file for database" src="./Linux Add a Swap File Tutorial - nixCraft_files/39.webp" data-lazy-src="https://www.cyberciti.biz/images/rp/13/39.jpg" data-ll-status="loaded" class="entered lazyloaded"><noscript><img width="96" height="96" alt="Solaris add a new swap file for database" src="https://www.cyberciti.biz/images/rp/13/39.jpg"></noscript></a><a href="https://www.cyberciti.biz/faq/howto-adding-new-swap-area/?utm_source=Related_Tutorials&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP_TEXT"><span class="crp_title">Solaris add a new swap file for database</span></a></li><li><a class="wp_rp_thumbnail" href="https://www.cyberciti.biz/faq/solaris-unix-add-swap-file-space/?utm_source=Related_Tutorials&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP_IMAGE" "=""><img width="96" height="96" alt="Solaris / OpenSolaris Add Swap File" data-lazy-src="https://www.cyberciti.biz/images/rp/13/48.jpg" class="entered lazyloaded" src="./Linux Add a Swap File Tutorial - nixCraft_files/48.webp" data-ll-status="loaded"><noscript><img width="96" height="96" alt="Solaris / OpenSolaris Add Swap File" src="https://www.cyberciti.biz/images/rp/13/48.jpg"></noscript></a><a href="https://www.cyberciti.biz/faq/solaris-unix-add-swap-file-space/?utm_source=Related_Tutorials&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP_TEXT"><span class="crp_title">Solaris / OpenSolaris Add Swap File</span></a></li><li><a class="wp_rp_thumbnail" href="https://www.cyberciti.biz/faq/how-to-add-swap-to-aws-ec2-lightsail-amazon-linux-instance/?utm_source=Related_Tutorials&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP_IMAGE" "=""><img width="96" height="96" alt="How to add swap to AWS EC2/Lightsail Amazon Linux instance" data-lazy-src="https://www.cyberciti.biz/images/rp/13/41.jpg" class="entered lazyloaded" src="./Linux Add a Swap File Tutorial - nixCraft_files/41.webp" data-ll-status="loaded"><noscript><img width="96" height="96" alt="How to add swap to AWS EC2/Lightsail Amazon Linux instance" src="https://www.cyberciti.biz/images/rp/13/41.jpg"></noscript></a><a href="https://www.cyberciti.biz/faq/how-to-add-swap-to-aws-ec2-lightsail-amazon-linux-instance/?utm_source=Related_Tutorials&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP_TEXT"><span class="crp_title">How to add swap to AWS EC2/Lightsail Amazon Linux instance</span></a></li><li><a class="wp_rp_thumbnail" href="https://www.cyberciti.biz/faq/create-a-freebsd-swap-file/?utm_source=Related_Tutorials&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP_IMAGE" "=""><img width="99" height="99" alt="How To Add Swap on FreeBSD Unix Systems" src="./Linux Add a Swap File Tutorial - nixCraft_files/38.webp" data-lazy-src="https://www.cyberciti.biz/images/rp/13/38.jpg" data-ll-status="loaded" class="entered lazyloaded"><noscript><img width="99" height="99" alt="How To Add Swap on FreeBSD Unix Systems" src="https://www.cyberciti.biz/images/rp/13/38.jpg"></noscript></a><a href="https://www.cyberciti.biz/faq/create-a-freebsd-swap-file/?utm_source=Related_Tutorials&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP_TEXT"><span class="crp_title">How To Add Swap on FreeBSD Unix Systems</span></a></li><li><a class="wp_rp_thumbnail" href="https://www.cyberciti.biz/faq/linux-unix-ftp-commands/?utm_source=Related_Tutorials&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP_IMAGE" "=""><img width="64" height="99" alt="Linux / UNIX FTP Commands Tutorial" src="./Linux Add a Swap File Tutorial - nixCraft_files/23.webp" data-lazy-src="https://www.cyberciti.biz/images/rp/13/23.jpg" data-ll-status="loaded" class="entered lazyloaded"><noscript><img width="64" height="99" alt="Linux / UNIX FTP Commands Tutorial" src="https://www.cyberciti.biz/images/rp/13/23.jpg"></noscript></a><a href="https://www.cyberciti.biz/faq/linux-unix-ftp-commands/?utm_source=Related_Tutorials&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP_TEXT"><span class="crp_title">Linux / UNIX FTP Commands Tutorial</span></a></li><li><a class="wp_rp_thumbnail" href="https://www.cyberciti.biz/faq/debian-ubuntu-linux-grep-command-tutorial-examples/?utm_source=Related_Tutorials&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP_IMAGE" "=""><img width="100" height="100" alt="grep Command Tutorial For Ubuntu / Debian Linux" data-lazy-src="https://www.cyberciti.biz/images/rp/13/56.jpg" class="entered lazyloaded" src="./Linux Add a Swap File Tutorial - nixCraft_files/56.webp" data-ll-status="loaded"><noscript><img width="100" height="100" alt="grep Command Tutorial For Ubuntu / Debian Linux" src="https://www.cyberciti.biz/images/rp/13/56.jpg"></noscript></a><a href="https://www.cyberciti.biz/faq/debian-ubuntu-linux-grep-command-tutorial-examples/?utm_source=Related_Tutorials&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP_TEXT"><span class="crp_title">grep Command Tutorial For Ubuntu / Debian Linux</span></a></li></ul></div></div><div class="crp_clear"></div></div><style>
+table.nixcraftcmdtabls {
+  /*width: 100%;
+  height: 100%;*/
+  width: auto;
+  height: auto;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+table.nixcraftcmdtabls td, table.nixcraftcmdtabls th {
+  padding: 5px;
+  font-size: 95%;
+}
+table.nixcraftcmdtabls tr:nth-child(even) {
+  background: #f7f7f7;
+}
+table.nixcraftcmdtabls thead {
+  background: #f7f7f7;
+}
+table.nixcraftcmdtabls thead th {
+  font-weight: bold;
+  text-align: center;
+}
+table.nixcraftcmdtabls abbr { 
+  border-bottom: none;   
+  text-decoration: none; 
+ }
+</style><a name="Commands"></a><table class="nixcraftcmdtabls"><thead><tr> <th>Category</th> <th>List of Unix and Linux commands</th></tr></thead><tbody><tr><td><a name="Ansible"></a><span title="ANS (Ansible) command category">Ansible</span></td><td><a title="How to check Ansible version on Linux/Unix" href="https://www.cyberciti.biz/faq/command-to-see-ansible-version-check-on-linux-unix/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Check version</a> <span style="color: #828282;">•</span> <a title="How to install Ansible on Fedora 32 for IT and server automation" href="https://www.cyberciti.biz/faq/how-to-install-ansible-on-fedora-for-it-and-server-automation/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Fedora</a> <span style="color: #828282;">•</span> <a title="How to prepare FreeBSD server to be managed by Ansible tool" href="https://www.cyberciti.biz/faq/how-to-prepare-freebsd-server-to-be-managed-by-ansible-tool/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">FreeBSD</a> <span style="color: #828282;">•</span> <a title="Linux Tutorial: Install Ansible Configuration Management And IT Automation Tool" href="https://www.cyberciti.biz/python-tutorials/linux-tutorial-install-ansible-configuration-management-and-it-automation-tool/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Linux</a> <span style="color: #828282;">•</span> <a title="How to install Ansible on Ubuntu 18.04 for IT automation" href="https://www.cyberciti.biz/faq/how-to-install-ansible-on-ubuntu-18-04-for-it-automation/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Ubuntu 18.04</a> <span style="color: #828282;">•</span> <a title="How to Install latest version of Ansible on Ubuntu Linux" href="https://www.cyberciti.biz/faq/how-to-install-and-configure-latest-version-of-ansible-on-ubuntu-linux/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Ubuntu</a> <span style="color: #828282;">•</span> <a title="How to install Ansible on MacOS using CLI" href="https://www.cyberciti.biz/faq/how-to-install-ansible-on-apple-macos-x-using-command-line/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">macOS</a></td></tr><tr><td><a name="Backup_Management"></a><span title="BAK (Backup Management) command category">Backup Management</span></td><td><a title="Debian / Ubuntu Linux Install and Configure Remote Filesystem Snapshot with rsnapshot Incremental Backup Utility" href="https://www.cyberciti.biz/faq/linux-rsnapshot-backup-howto/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Debian/Ubuntu</a> <span style="color: #828282;">•</span> <a title="FreeBSD Install Rsnapshot Filesystem Snapshot Backup Utility" href="https://www.cyberciti.biz/faq/howto-install-rsnapshot-filesystem-snapshot-backup-utility-in-freebsd/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">FreeBSD</a> <span style="color: #828282;">•</span> <a title="How to install rsnapshot remote backup server on Red Hat/CentOS Linux" href="https://www.cyberciti.biz/faq/redhat-cetos-linux-remote-backup-snapshot-server/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">RHEL</a></td></tr><tr><td><a name="Database_Server"></a><span title="DBS (Database Server) command category">Database Server</span></td><td><a title="Shell Script To Backup MySql Database Server" href="https://bash.cyberciti.biz/backup/backup-mysql-database-server-2/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Backup MySQL server</a> <span style="color: #828282;">•</span> <a title="How to install and configure MariaDB Galera as master to master replication cluster on Ubuntu 16.04 LTS" href="https://www.cyberciti.biz/faq/howto-install-configure-mariadb-galera-master-cluster-ubuntulinux/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">MariaDB Galera cluster</a> <span style="color: #828282;">•</span> <a title="How to set up MariaDB SSL and secure connections from clients" href="https://www.cyberciti.biz/faq/how-to-setup-mariadb-ssl-and-secure-connections-from-clients/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">MariaDB TLS/SSL</a> <span style="color: #828282;">•</span> <a title="How to set up MariaDB Master-Slave replication with SSL on Ubuntu Linux" href="https://www.cyberciti.biz/faq/how-to-set-up-mariadb-master-slave-replication-with-ssl-on-ubuntu-linux/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">MariaDB replication</a> <span style="color: #828282;">•</span> <a title="How to install MySQL server on Ubuntu 20.04 Linux" href="https://www.cyberciti.biz/faq/install-mysql-server-8-on-ubuntu-20-04-lts-linux/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">MySQL Server</a> <span style="color: #828282;">•</span> <a title="How Do I Enable Remote Access To MySQL Database Server?" href="https://www.cyberciti.biz/tips/how-do-i-enable-remote-access-to-mysql-database-server.html?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">MySQL remote access</a></td></tr><tr><td><a name="Download_managers"></a><span title="DL (Download managers) command category">Download managers</span></td><td><a title="Wget Command in Linux with Examples" href="https://www.cyberciti.biz/tips/linux-wget-your-ultimate-command-line-downloader.html?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">wget</a></td></tr><tr><td><a name="Driver_Management"></a><span title="DM (Driver Management) command category">Driver Management</span></td><td><a title="Linux Nvidia Driver How To - Linux / Unix Q &amp; A from nixCraft" href="https://www.cyberciti.biz/faq/tag/linux-nvidia-driver/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Linux Nvidia driver</a> <span style="color: #828282;">•</span> <a title="Linux find out what kernel drivers loaded with lsmod command" href="https://www.cyberciti.biz/faq/linux-show-the-status-of-modules-driver-lsmod-command/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">lsmod</a></td></tr><tr><td><a name="Documentation"></a><span title="DOC (Documentation) command category">Documentation</span></td><td><a title="Help command - Linux Bash Shell Scripting Tutorial Wiki" href="https://bash.cyberciti.biz/guide/Help_command?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">help</a> <span style="color: #828282;">•</span> <a title="Mandb command - Linux Bash Shell Scripting Tutorial Wiki" href="https://bash.cyberciti.biz/guide/Mandb_command?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">mandb</a> <span style="color: #828282;">•</span> <a title="Man command - Linux Bash Shell Scripting Tutorial Wiki" href="https://bash.cyberciti.biz/guide/Man_command?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">man</a> <span style="color: #828282;">•</span> <a title="pinfo - Read Linux Info Documentation in Colors" href="https://www.cyberciti.biz/open-source/command-line-hacks/linux-command-pinfo-for-colorful-info-pages/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">pinfo</a></td></tr><tr><td><a name="Disk_Management"></a><span title="DSM (Disk Management) command category">Disk Management</span></td><td><a title="How to use df command in Linux / Unix {with examples}" href="https://www.cyberciti.biz/faq/df-command-examples-in-linux-unix/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">df</a> <span style="color: #828282;">•</span> <a title="duf - Disk Usage/Free Utility for Linux, BSD, macOS &amp; Windows" href="https://www.cyberciti.biz/open-source/command-line-hacks/duf-disk-usage-free-utility-for-linux-bsd-macos-windows/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">duf</a> <span style="color: #828282;">•</span> <a title="How to install ncdu on Linux / Unix to see disk usage" href="https://www.cyberciti.biz/open-source/install-ncdu-on-linux-unix-ncurses-disk-usage/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">ncdu</a> <span style="color: #828282;">•</span> <a title="pydf - Linux tool to see colourised filesystem disk space usage" href="https://www.cyberciti.biz/tips/unix-linux-bsd-pydf-command-in-colours.html?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">pydf</a></td></tr><tr><td><a name="File_Management"></a><span title="FS (File Management) command category">File Management</span></td><td><a title="cat Command in Linux / Unix with examples" href="https://www.cyberciti.biz/faq/linux-unix-appleosx-bsd-cat-command-examples/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">cat</a> <span style="color: #828282;">•</span> <a title="Linux Copy File Command [ cp Command Examples ]" href="https://www.cyberciti.biz/faq/copy-command/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">cp</a> <span style="color: #828282;">•</span> <a title="Less command - Linux Bash Shell Scripting Tutorial Wiki" href="https://bash.cyberciti.biz/guide/Less_command?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">less</a> <span style="color: #828282;">•</span> <a title="Linux: How to Make a Directory Command" href="https://www.cyberciti.biz/faq/linux-make-directory-command/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">mkdir</a> <span style="color: #828282;">•</span> <a title="More command - Linux Bash Shell Scripting Tutorial Wiki" href="https://bash.cyberciti.biz/guide/More_command?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">more</a> <span style="color: #828282;">•</span> <a title="Linux see directory tree structure using tree command" href="https://www.cyberciti.biz/faq/linux-show-directory-structure-command-line/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">tree</a></td></tr><tr><td><a name="Firewall"></a><span title="FW (Firewall) command category">Firewall</span></td><td><a title="How To Set Up a Firewall with Awall on Alpine Linux" href="https://www.cyberciti.biz/faq/how-to-set-up-a-firewall-with-awall-on-alpine-linux/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Alpine Awall</a> <span style="color: #828282;">•</span> <a title="How to set up a firewall using FirewallD on CentOS 8" href="https://www.cyberciti.biz/faq/how-to-set-up-a-firewall-using-firewalld-on-centos-8/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">CentOS 8</a> <span style="color: #828282;">•</span> <a title="How to set up a firewall using FirewallD on OpenSUSE Linux" href="https://www.cyberciti.biz/faq/set-up-a-firewall-using-firewalld-on-opensuse-linux/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">OpenSUSE</a> <span style="color: #828282;">•</span> <a title="How to set up a firewall using FirewallD on RHEL 8" href="https://www.cyberciti.biz/faq/configure-set-up-a-firewall-using-firewalld-on-rhel-8/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">RHEL 8 </a> <span style="color: #828282;">•</span> <a title="How to set up a UFW firewall on Ubuntu 16.04 LTS server" href="https://www.cyberciti.biz/faq/howto-configure-setup-firewall-with-ufw-on-ubuntu-linux/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Ubuntu 16.04</a> <span style="color: #828282;">•</span> <a title="How to setup a UFW firewall on Ubuntu 18.04 LTS server" href="https://www.cyberciti.biz/faq/how-to-setup-a-ufw-firewall-on-ubuntu-18-04-lts-server/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Ubuntu 18.04</a> <span style="color: #828282;">•</span> <a title="How To Configure Firewall with UFW on Ubuntu 20.04 LTS" href="https://www.cyberciti.biz/faq/how-to-configure-firewall-with-ufw-on-ubuntu-20-04-lts/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Ubuntu 20.04</a> <span style="color: #828282;">•</span> <a title="Ubuntu 22.04 Set Up UFW Firewall in 5 Minutes" href="https://www.cyberciti.biz/faq/ubuntu-22-04-lts-set-up-ufw-firewall-in-5-minutes/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Ubuntu 24.04</a></td></tr><tr><td><a name="KVM_Virtualization"></a><span title="KVM (KVM Virtualization) command category">KVM Virtualization</span></td><td><a title="How to install KVM on CentOS 7 / RHEL 7 Headless Server" href="https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">CentOS/RHEL 7</a> <span style="color: #828282;">•</span> <a title="How to install KVM on CentOS 8 Headless Server" href="https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-8-headless-server/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">CentOS/RHEL 8</a> <span style="color: #828282;">•</span> <a title="How to install KVM server on Debian 9/10 Headless Server" href="https://www.cyberciti.biz/faq/install-kvm-server-debian-linux-9-headless-server/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Debian 9/10/11</a> <span style="color: #828282;">•</span> <a title="How to install KVM on Ubuntu 20.04 LTS Headless Server" href="https://www.cyberciti.biz/faq/how-to-install-kvm-on-ubuntu-20-04-lts-headless-server/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Ubuntu 20.04</a></td></tr><tr><td><a name="Linux_Desktop_apps"></a><span title="LDA (Linux Desktop apps) command category">Linux Desktop apps</span></td><td><a title="Ubuntu Linux: Install Google Chrome Browser Command" href="https://www.cyberciti.biz/faq/how-to-install-google-chrome-in-ubuntu-linux-12-xx-13-xx/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Chrome</a> <span style="color: #828282;">•</span> <a title="How to install Chromium browser on Ubuntu Linux" href="https://www.cyberciti.biz/faq/install-chromium-browser-on-ubuntu-linux/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Chromium</a> <span style="color: #828282;">•</span> <a title="How to install GIMP 2.10 on Ubuntu or Debian Linux" href="https://www.cyberciti.biz/faq/how-to-install-gimp-on-ubuntu-debian-linux/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">GIMP</a> <span style="color: #828282;">•</span> <a title="How to install Skype application on Linux" href="https://www.cyberciti.biz/faq/how-to-install-skype-application-on-linux/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Skype</a> <span style="color: #828282;">•</span> <a title="How to install Spotify on Linux" href="https://www.cyberciti.biz/faq/how-to-install-spotify-application-on-linux/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Spotify</a> <span style="color: #828282;">•</span> <a title="How to install VLC 3 application (Vetinari) on Linux" href="https://www.cyberciti.biz/faq/how-to-install-vlc-3-application-vetinari-on-linux/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">VLC 3</a></td></tr><tr><td><a name="Modern_utilities"></a><span title="MD (Modern utilities) command category">Modern utilities</span></td><td><a title="bat Linux command - A cat clone with written in Rust" href="https://www.cyberciti.biz/open-source/bat-linux-command-a-cat-clone-with-written-in-rust/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">bat</a> <span style="color: #828282;">•</span> <a title="exa a modern replacement for ls command in rust for Linux/Unix" href="https://www.cyberciti.biz/open-source/command-line-hacks/exa-a-modern-replacement-for-ls-written-in-rust-for-linuxunix/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">exa</a></td></tr><tr><td><a name="Network_Management"></a><span title="NETM (Network Management) command category">Network Management</span></td><td><a title="30 Linux System Monitoring Tools Every SysAdmin Should Know" href="https://www.cyberciti.biz/tips/top-linux-monitoring-tools.html?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Monitoring tools</a> <span style="color: #828282;">•</span> <a title="Unix HowTo: Start / Stop / Restart Network Service Command" href="https://www.cyberciti.biz/faq/unix-network-service-restart-stop/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Network services</a> <span style="color: #828282;">•</span> <a title="How to configure a static IP address on RHEL 8" href="https://www.cyberciti.biz/faq/how-to-configure-a-static-ip-address-on-rhel-8/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">RHEL static IP</a> <span style="color: #828282;">•</span> <a title="How to Restart Network Interface in Linux" href="https://www.cyberciti.biz/faq/linux-restart-network-interface/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Restart network interface</a> <span style="color: #828282;">•</span> <a title="How to add network bridge with nmcli (NetworkManager) on Linux" href="https://www.cyberciti.biz/faq/how-to-add-network-bridge-with-nmcli-networkmanager-on-linux/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">nmcli</a></td></tr><tr><td><a name="Network_Utilities"></a><span title="NU (Network Utilities) command category">Network Utilities</span></td><td><a title="Linux See Bandwidth Usage Per Process With Nethogs Tool" href="https://www.cyberciti.biz/faq/linux-find-out-what-process-is-using-bandwidth/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">NetHogs</a> <span style="color: #828282;">•</span> <a title="Linux and Unix dig Command Examples" href="https://www.cyberciti.biz/faq/linux-unix-dig-command-examples-usage-syntax/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">dig</a> <span style="color: #828282;">•</span> <a title="Linux and Unix host Command Examples" href="https://www.cyberciti.biz/faq/linux-unix-host-command-examples-usage-syntax/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">host</a> <span style="color: #828282;">•</span> <a title="Linux ip Command Examples" href="https://www.cyberciti.biz/faq/linux-ip-command-examples-usage-syntax/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">ip</a> <span style="color: #828282;">•</span> <a title="Nmap Command Examples For Linux Users / Admins" href="https://www.cyberciti.biz/security/nmap-command-examples-tutorials/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">nmap</a> <span style="color: #828282;">•</span> <a title="UNIX ping Command Examples" href="https://www.cyberciti.biz/faq/unix-ping-command-examples/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">ping</a></td></tr><tr><td><a name="OpenVPN"></a><span title="OVPN (OpenVPN) command category">OpenVPN</span></td><td><a title="CentOS 7 Set Up OpenVPN Server In 5 Minutes" href="https://www.cyberciti.biz/faq/centos-7-0-set-up-openvpn-server-in-5-minutes/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">CentOS 7</a> <span style="color: #828282;">•</span> <a title="CentOS 8 Set Up OpenVPN Server In 5 Minutes" href="https://www.cyberciti.biz/faq/centos-8-set-up-openvpn-server-in-5-minutes/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">CentOS 8</a> <span style="color: #828282;">•</span> <a title="Debian 10 Set Up OpenVPN Server In 5 Minutes" href="https://www.cyberciti.biz/faq/debian-10-set-up-openvpn-server-in-5-minutes/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Debian 10</a> <span style="color: #828282;">•</span> <a title="Debian 11 Set Up OpenVPN Server In 5 Minutes" href="https://www.cyberciti.biz/faq/debian-11-set-up-openvpn-server-in-5-minutes/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Debian 11</a> <span style="color: #828282;">•</span> <a title="Install and Configure an OpenVPN on Debian 9 In 5 Minutes" href="https://www.cyberciti.biz/faq/install-configure-openvpn-server-on-debian-9-linux/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Debian 8/9</a> <span style="color: #828282;">•</span> <a title="Ubuntu 18.04 LTS Set Up OpenVPN Server In 5 Minutes" href="https://www.cyberciti.biz/faq/ubuntu-18-04-lts-set-up-openvpn-server-in-5-minutes/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Ubuntu 18.04</a> <span style="color: #828282;">•</span> <a title="Ubuntu 22.04 LTS Set Up OpenVPN Server In 5 Minutes" href="https://www.cyberciti.biz/faq/ubuntu-22-04-lts-set-up-openvpn-server-in-5-minutes/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Ubuntu 20.04</a></td></tr><tr><td><a name="Power_Management"></a><span title="PMG (Power Management) command category">Power Management</span></td><td><a title="upower command in Linux with examples" href="https://www.cyberciti.biz/faq/linux-upower-command-examples-and-syntax/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">upower</a></td></tr><tr><td><a name="Package_Manager"></a><span title="PM (Package Manager) command category">Package Manager</span></td><td><a title="10 Alpine Linux apk Command Examples" href="https://www.cyberciti.biz/faq/10-alpine-linux-apk-command-examples/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">apk</a> <span style="color: #828282;">•</span> <a title="Ubuntu/Debian Linux apt-get package management cheat sheet" href="https://www.cyberciti.biz/tips/linux-debian-package-management-cheat-sheet.html?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">apt-get</a> <span style="color: #828282;">•</span> <a title="apt Command Examples for Ubuntu/Debian Linux" href="https://www.cyberciti.biz/faq/ubuntu-lts-debian-linux-apt-command-examples/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">apt</a> <span style="color: #828282;">•</span> <a title="How to use yum command on CentOS/RHEL" href="https://www.cyberciti.biz/faq/rhel-centos-fedora-linux-yum-command-howto/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">yum</a></td></tr><tr><td><a name="Processes_Management"></a><span title="PRM (Processes Management) command category">Processes Management</span></td><td><a title="Linux / Unix: bg Command Examples" href="https://www.cyberciti.biz/faq/unix-linux-bg-command-examples-usage-syntax/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">bg</a> <span style="color: #828282;">•</span> <a title="Linux / Unix: chroot Command Examples" href="https://www.cyberciti.biz/faq/unix-linux-chroot-command-examples-usage-syntax/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">chroot</a> <span style="color: #828282;">•</span> <a title="How To Add Jobs To cron Under Linux or UNIX" href="https://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">cron</a> <span style="color: #828282;">•</span> <a title="Linux / Unix: disown Command Examples" href="https://www.cyberciti.biz/faq/unix-linux-disown-command-examples-usage-syntax/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">disown</a> <span style="color: #828282;">•</span> <a title="Linux / Unix: fg Command Examples" href="https://www.cyberciti.biz/faq/unix-linux-fg-command-examples-usage-syntax/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">fg</a> <span style="color: #828282;">•</span> <a title="Linux: Keep An Eye On Your System With Glances Monitor" href="https://www.cyberciti.biz/faq/linux-install-glances-monitoring-tool/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">glances</a> <span style="color: #828282;">•</span> <a title="gtop: Awesome system monitoring dashboard for Linux/macOS Unix terminal" href="https://www.cyberciti.biz/howto/gtop-awesome-system-monitoring-dashboard-for-terminal/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">gtop</a> <span style="color: #828282;">•</span> <a title="Linux iotop Check What&#39;s Stressing &amp; Increasing Load On Hard Disks" href="https://www.cyberciti.biz/hardware/linux-iotop-simple-top-like-io-monitor/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">iotop</a> <span style="color: #828282;">•</span> <a title="Linux / Unix: jobs Command Examples" href="https://www.cyberciti.biz/faq/unix-linux-jobs-command-examples-usage-syntax/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">jobs</a> <span style="color: #828282;">•</span> <a title="Linux / Unix: killall Command Examples" href="https://www.cyberciti.biz/faq/unix-linux-killall-command-examples-usage-syntax/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">killall</a> <span style="color: #828282;">•</span> <a title="Linux / UNIX: Kill Command Examples" href="https://www.cyberciti.biz/faq/unix-kill-command-examples/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">kill</a> <span style="color: #828282;">•</span> <a title="Linux pidof Command Examples To Find PID of A Program/Command" href="https://www.cyberciti.biz/faq/linux-pidof-command-examples-find-pid-of-program/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">pidof</a> <span style="color: #828282;">•</span> <a title="Linux/Unix: pstree Command Examples: See A Tree Of Processes" href="https://www.cyberciti.biz/faq/unix-linux-pstree-command-examples-shows-running-processestree/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">pstree</a> <span style="color: #828282;">•</span> <a title="Linux / Unix: pwdx Command Examples" href="https://www.cyberciti.biz/faq/unix-linux-pwdx-command-examples-usage-syntax/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">pwdx</a> <span style="color: #828282;">•</span> <a title="Linux / Unix: time Command Examples" href="https://www.cyberciti.biz/faq/unix-linux-time-command-examples-usage-syntax/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">time</a> <span style="color: #828282;">•</span> <a title="How to install and use vtop graphical terminal monitor on Linux" href="https://www.cyberciti.biz/faq/how-to-install-and-use-vtop-graphical-terminal-activity-monitor-on-linux/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">vtop</a></td></tr><tr><td><a name="Searching"></a><span title="SER (Searching) command category">Searching</span></td><td><a title="ag - supercharge string search through a directory on a Linux" href="https://www.cyberciti.biz/open-source/command-line-hacks/ag-supercharge-string-search-through-directory-hierarchy/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">ag</a> <span style="color: #828282;">•</span> <a title="Regular expressions in grep ( regex ) with examples" href="https://www.cyberciti.biz/faq/grep-regular-expressions/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">egrep</a> <span style="color: #828282;">•</span> <a title="How to use grep command in Linux/ Unix with examples" href="https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">grep</a> <span style="color: #828282;">•</span> <a title="Linux / Unix whereis Command Examples" href="https://www.cyberciti.biz/faq/unix-linux-whereis-command-examples-to-locate-binary/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">whereis</a> <span style="color: #828282;">•</span> <a title="Linux / Unix which Command Examples To Locate a Command" href="https://www.cyberciti.biz/faq/unix-linux-which-command-examples-syntax-to-locate-programs/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">which</a></td></tr><tr><td><a name="Shell_builtins"></a><span title="SHB (Shell builtins) command category">Shell builtins</span></td><td><a title="compgen: An Awesome Command To List All Linux Commands" href="https://www.cyberciti.biz/open-source/command-line-hacks/compgen-linux-command/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">compgen</a> <span style="color: #828282;">•</span> <a title="Echo Command - Linux Bash Shell Scripting Tutorial Wiki" href="https://bash.cyberciti.biz/guide/Echo_Command?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">echo</a> <span style="color: #828282;">•</span> <a title="Printf command - Linux Bash Shell Scripting Tutorial Wiki" href="https://bash.cyberciti.biz/guide/Printf_command?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">printf</a></td></tr><tr><td><a name="System_Management"></a><span title="SM (System Management) command category">System Management</span></td><td><a title="Reboot Linux System Command" href="https://www.cyberciti.biz/faq/howto-reboot-linux/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">reboot</a> <span style="color: #828282;">•</span> <a title="How To Shutdown Linux Using Command Line" href="https://www.cyberciti.biz/faq/howto-shutdown-linux/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">shutdown</a></td></tr><tr><td><a name="Terminal/ssh"></a><span title="SSH (Terminal/ssh) command category">Terminal/ssh</span></td><td><a title="sshpass - Login to ssh server with a password using a shell script" href="https://www.cyberciti.biz/faq/noninteractive-shell-script-ssh-password-provider/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">sshpass</a> <span style="color: #828282;">•</span> <a title="Find Out What tty I&#39;m Using tty command under Linux / Unix" href="https://www.cyberciti.biz/faq/linux-unix-appleosx-bsd-what-tty-command/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">tty</a></td></tr><tr><td><a name="Text_processing"></a><span title="TP (Text processing) command category">Text processing</span></td><td><a title="Cut command - Linux Bash Shell Scripting Tutorial Wiki" href="https://bash.cyberciti.biz/guide/Cut_command?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">cut</a> <span style="color: #828282;">•</span> <a title="Rev command - Linux Bash Shell Scripting Tutorial Wiki" href="https://bash.cyberciti.biz/guide/Rev_command?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">rev</a></td></tr><tr><td><a name="Text_Editor"></a><span title="TXTE (Text Editor) command category">Text Editor</span></td><td><a title="6 awesome text editors for Linux, macOS, and BSD CLI users" href="https://www.cyberciti.biz/open-source/awesome-text-editors-for-linux-and-unix-command-line-users-developers/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">6 Text editors</a> <span style="color: #828282;">•</span> <a title="How To: Vi / Vim Save And Quit The Editor Command" href="https://www.cyberciti.biz/faq/linux-unix-vim-save-and-quit-command/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Save and exit vim</a></td></tr><tr><td><a name="User_Environment"></a><span title="UE (User Environment) command category">User Environment</span></td><td><a title="Exit command - Linux Bash Shell Scripting Tutorial Wiki" href="https://bash.cyberciti.biz/guide/Exit_command?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">exit</a> <span style="color: #828282;">•</span> <a title="Linux / Unix who Command Examples To List Users on The Systems" href="https://www.cyberciti.biz/faq/unix-linux-who-command-examples-syntax-usage/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">who</a></td></tr><tr><td><a name="User_Information"></a><span title="UI (User Information) command category">User Information</span></td><td><a title="Linux / Unix: groups Command Examples" href="https://www.cyberciti.biz/faq/unix-linux-groups-command-examples-syntax-usage/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">groups</a> <span style="color: #828282;">•</span> <a title="Linux / Unix id Command Examples" href="https://www.cyberciti.biz/faq/unix-linux-id-command-examples-usage-syntax/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">id</a> <span style="color: #828282;">•</span> <a title="Linux / Unix: lastcomm Command Examples" href="https://www.cyberciti.biz/faq/linux-unix-lastcomm-command-examples-usage-syntax/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">lastcomm</a> <span style="color: #828282;">•</span> <a title="Linux / Unix last Command Examples" href="https://www.cyberciti.biz/faq/linux-unix-last-command-examples/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">last</a> <span style="color: #828282;">•</span> <a title="Linux lid (libuser-lid) Command Examples" href="https://www.cyberciti.biz/faq/linux-lid-command-examples-syntax-usage/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">lid/libuser-lid</a> <span style="color: #828282;">•</span> <a title="Linux / Unix: logname Command Examples To Display Loginname" href="https://www.cyberciti.biz/faq/unix-linux-logname-command-examples-syntax-usage/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">logname</a> <span style="color: #828282;">•</span> <a title="Linux members Command Examples" href="https://www.cyberciti.biz/faq/linux-members-command-examples-usage-syntax/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">members</a> <span style="color: #828282;">•</span> <a title="Linux / Unix: users Command Examples" href="https://www.cyberciti.biz/faq/unix-linux-users-command-examples-syntax-usage/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">users</a> <span style="color: #828282;">•</span> <a title="Linux / Unix: whoami Command Examples" href="https://www.cyberciti.biz/faq/unix-linux-whoami-command-examples-syntax-usage/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">whoami</a> <span style="color: #828282;">•</span> <a title="Linux / Unix: w Command Examples " href="https://www.cyberciti.biz/faq/unix-linux-w-command-examples-syntax-usage-2/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">w</a></td></tr><tr><td><a name="User_Management"></a><span title="USM (User Management) command category">User Management</span></td><td><a title="Understanding /etc/group File" href="https://www.cyberciti.biz/faq/understanding-etcgroup-file/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">/etc/group</a> <span style="color: #828282;">•</span> <a title="Understanding /etc/passwd File Format" href="https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">/etc/passwd</a> <span style="color: #828282;">•</span> <a title="Understanding /etc/shadow file format on Linux" href="https://www.cyberciti.biz/faq/understanding-etcshadow-file/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">/etc/shadow</a> <span style="color: #828282;">•</span> <a title="chsh command in Linux and Unix - Linux Bash Shell Scripting Tutorial Wiki" href="https://bash.cyberciti.biz/guide/Chsh_command?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">chsh</a></td></tr><tr><td><a name="Web_Server"></a><span title="WEBS (Web Server) command category">Web Server</span></td><td><a title="Apache related tutorial/FAQ" href="https://www.cyberciti.biz/faq/category/apache/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Apache</a> <span style="color: #828282;">•</span> <a title="Let&#39;s Encrypt certificate How To - Linux / Unix Q &amp; A from nixCraft" href="https://www.cyberciti.biz/faq/tag/lets-encrypt-certificate/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Let's Encrypt certificate</a> <span style="color: #828282;">•</span> <a title="lighttpd Linux/Unix tips from nixCraft" href="https://www.cyberciti.biz/tips/category/lighttpd?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Lighttpd</a> <span style="color: #828282;">•</span> <a title="Top 25 Nginx Web Server Best Security Practices" href="https://www.cyberciti.biz/tips/linux-unix-bsd-nginx-webserver-security.html?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Nginx Security</a> <span style="color: #828282;">•</span> <a title="Nginx related tutorial/FAQ" href="https://www.cyberciti.biz/faq/category/nginx/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Nginx</a></td></tr><tr><td><a name="WireGuard_VPN"></a><span title="WG (WireGuard VPN) command category">WireGuard VPN</span></td><td><a title="Alpine Linux set up WireGuard VPN server" href="https://www.cyberciti.biz/faq/how-to-set-up-wireguard-vpn-server-on-alpine-linux/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Alpine</a> <span style="color: #828282;">•</span> <a title="How to Set Up WireGuard VPN on Amazon Linux 2" href="https://www.cyberciti.biz/faq/install-set-up-wireguard-on-amazon-linux-2/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Amazon Linux</a> <span style="color: #828282;">•</span> <a title="CentOS 8 set up WireGuard VPN server" href="https://www.cyberciti.biz/faq/centos-8-set-up-wireguard-vpn-server/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">CentOS 8</a> <span style="color: #828282;">•</span> <a title="Debian 10 set up WireGuard VPN server" href="https://www.cyberciti.biz/faq/debian-10-set-up-wireguard-vpn-server/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Debian 10</a> <span style="color: #828282;">•</span> <a title="How To Set Up WireGuard Firewall Rules in Linux" href="https://www.cyberciti.biz/faq/how-to-set-up-wireguard-firewall-rules-in-linux/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Firewall</a> <span style="color: #828282;">•</span> <a title="How to set up WireGuard VPN server on Ubuntu 20.04" href="https://www.cyberciti.biz/faq/ubuntu-20-04-set-up-wireguard-vpn-server/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">Ubuntu 20.04</a> <span style="color: #828282;">•</span> <a title="How to generate WireGuard QR code on Linux for mobile" href="https://www.cyberciti.biz/faq/how-to-generate-wireguard-qr-code-on-linux-for-mobile/?utm_source=Cmd_Table&amp;utm_medium=faq&amp;utm_campaign=Apr_22_2022_EOP">qrencode</a></td></tr></tbody></table> <div id="comments" class="text">
+<div class="comments_intro"><span class="num_comments">53</span> comments… <a href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#respond" rel="nofollow">add one</a></div>
+<ul class="comment_list">
+<li class="comment even thread-even depth-1" id="comment-8087">
+<div class="comment_header">
+<span class="comment_author">anon</span>
+<span class="comment_date">Jan 17, 2007 @ 22:00</span>
+</div>
+<div class="comment_text" id="comment-body-8087">
+<p>TYPO: vi /etc/fstatb<br>
+It should be fstab</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-8087" data-commentid="8087" data-postid="243" data-belowelement="comment-body-8087" data-respondelement="respond" data-replyto="Reply to anon" aria-label="Reply to anon">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-8087" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment byuser comment-author-administrator bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-8088">
+<div class="comment_header">
+🐧 <span class="comment_author"><a href="https://vivekgite.com/" rel="external nofollow ugc" class="url">nixCraft</a></span>
+<span class="comment_date">Jan 17, 2007 @ 22:16</span>
+</div>
+<div class="comment_text" id="comment-body-8088">
+<p>anon,</p>
+<p>Thanks for heads up!</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-8088" data-commentid="8088" data-postid="243" data-belowelement="comment-body-8088" data-respondelement="respond" data-replyto="Reply to nixCraft" aria-label="Reply to nixCraft">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-8088" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-36385">
+<div class="comment_header">
+<span class="comment_author">some_guy</span>
+<span class="comment_date">Jun 1, 2007 @ 2:35</span>
+</div>
+<div class="comment_text" id="comment-body-36385">
+<p>If you don’t want to reboot the machine to enable the new swapfile, after step f) you can issue these commands:</p>
+<p>swapoff -a<br>
+swapon -a</p>
+<p>to first stop and then start all swaps in /etc/fstab</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-36385" data-commentid="36385" data-postid="243" data-belowelement="comment-body-36385" data-respondelement="respond" data-replyto="Reply to some_guy" aria-label="Reply to some_guy">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-36385" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="comment-144551">
+<div class="comment_header">
+<span class="comment_author">mgm</span>
+<span class="comment_date">Apr 27, 2014 @ 13:13</span>
+</div>
+<div class="comment_text" id="comment-body-144551">
+<p>this was really helpful for debugging my automounting issue. Turns out I had a typo on the swapfile name.<br>
+Thnx some_guy</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-144551" data-commentid="144551" data-postid="243" data-belowelement="comment-body-144551" data-respondelement="respond" data-replyto="Reply to mgm" aria-label="Reply to mgm">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-144551" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-36918">
+<div class="comment_header">
+<span class="comment_author">asdffdsa</span>
+<span class="comment_date">Oct 20, 2007 @ 8:25</span>
+</div>
+<div class="comment_text" id="comment-body-36918">
+<p>Thanks for the help. But how would I go about deleting this swapfile? Also, how does creating a swapfile this way differ from creating a separate partition for one? I only ask because I would like to have multiple installs of linux on my system, and I would like them to share the same swapfile.</p>
+<p>Recently, I’ve been trying to create a swapfile partition and it’s not being recognized, so I’ve been having trouble.</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-36918" data-commentid="36918" data-postid="243" data-belowelement="comment-body-36918" data-respondelement="respond" data-replyto="Reply to asdffdsa" aria-label="Reply to asdffdsa">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-36918" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-37861">
+<div class="comment_header">
+<span class="comment_author">Mosab</span>
+<span class="comment_date">May 7, 2008 @ 18:29</span>
+</div>
+<div class="comment_text" id="comment-body-37861">
+<p>Thanks, I have been looking for the last step for months heh.</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-37861" data-commentid="37861" data-postid="243" data-belowelement="comment-body-37861" data-respondelement="respond" data-replyto="Reply to Mosab" aria-label="Reply to Mosab">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-37861" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-41145">
+<div class="comment_header">
+<span class="comment_author">Alex</span>
+<span class="comment_date">Apr 10, 2009 @ 19:45</span>
+</div>
+<div class="comment_text" id="comment-body-41145">
+<p>Thank you for the guide; I’d like to add another detail. In this line one may choose to use other units to make things more simple:</p>
+<blockquote><p># dd if=/dev/zero of=/swapfile1 bs=1024 count=524288</p></blockquote>
+<p>You can turn it into:</p>
+<blockquote><p># dd if=/dev/zero of=/swapfile1 bs=1M count=512</p></blockquote>
+<p>This means that the block size is 1 MB, so count=512 means “I need 512 megs”, there is no need to do any other calculations.</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-41145" data-commentid="41145" data-postid="243" data-belowelement="comment-body-41145" data-respondelement="respond" data-replyto="Reply to Alex" aria-label="Reply to Alex">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-41145" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-44536">
+<div class="comment_header">
+<span class="comment_author">acidtoi</span>
+<span class="comment_date">Nov 10, 2009 @ 1:12</span>
+</div>
+<div class="comment_text" id="comment-body-44536">
+<p>hi,<br>
+i’m about to install ubuntu karmic on a new computer with thre sata hard drives.</p>
+<p>I usually allocate a little more of current ram in swap partition (5 gigas) so I can safely hibernate, but on a post I read in FreeBSD forums there’s a link to FreeBSD manual where states there should be a swap partition for every disk, not just one swap for the whole system.</p>
+<p>So, I know Linux is not *BSD but I wonder if the same is applicable here because installing a swap of 5 gigs in all three sata seems a waste of space to me!</p>
+<p>cheers!</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-44536" data-commentid="44536" data-postid="243" data-belowelement="comment-body-44536" data-respondelement="respond" data-replyto="Reply to acidtoi" aria-label="Reply to acidtoi">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-44536" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-45041">
+<div class="comment_header">
+<span class="comment_author">Gen2ly</span>
+<span class="comment_date">Dec 5, 2009 @ 2:39</span>
+</div>
+<div class="comment_text" id="comment-body-45041">
+<p>Set swap priority:</p>
+<p>• Swapiness is the priority of input/output for swap. To look the current value:<br>
+cat /proc/sys/vm/swappiness</p>
+<p>To change the swap priority (lower value means less swapping):<br>
+sysctl vm.swappiness=10</p>
+<p>To have this value set at boot add it to /etc/sysctl.conf<br>
+vm.swappiness=0</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-45041" data-commentid="45041" data-postid="243" data-belowelement="comment-body-45041" data-respondelement="respond" data-replyto="Reply to Gen2ly" aria-label="Reply to Gen2ly">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-45041" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-45531">
+<div class="comment_header">
+<span class="comment_author">Primoz</span>
+<span class="comment_date">Jan 12, 2010 @ 18:37</span>
+</div>
+<div class="comment_text" id="comment-body-45531">
+<p>Hi!<br>
+First I must say thanks for a great how to.<br>
+And secondly, I’m referencing it in Arch Linux wiki how to create swap file.<br>
+Hope you agree with it.<br>
+If not please contact me.<br>
+Link: <a href="https://wiki.archlinux.org/index.php/HOWTO_Create_swap_file" rel="nofollow">http://wiki.archlinux.org/index.php/HOWTO_Create_swap_file</a></p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-45531" data-commentid="45531" data-postid="243" data-belowelement="comment-body-45531" data-respondelement="respond" data-replyto="Reply to Primoz" aria-label="Reply to Primoz">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-45531" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-46235">
+<div class="comment_header">
+<span class="comment_author">luckyrams</span>
+<span class="comment_date">Mar 3, 2010 @ 14:08</span>
+</div>
+<div class="comment_text" id="comment-body-46235">
+<p>Thanks! I’m newbie to Linux, It helped me in time.</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-46235" data-commentid="46235" data-postid="243" data-belowelement="comment-body-46235" data-respondelement="respond" data-replyto="Reply to luckyrams" aria-label="Reply to luckyrams">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-46235" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-47159">
+<div class="comment_header">
+<span class="comment_author">Thomas</span>
+<span class="comment_date">May 3, 2010 @ 9:27</span>
+</div>
+<div class="comment_text" id="comment-body-47159">
+<p>Great howto!</p>
+<p>After creating the swap file its permissions should be set so that only root can access the file:</p>
+<p>chmod 600 /swapfile1</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-47159" data-commentid="47159" data-postid="243" data-belowelement="comment-body-47159" data-respondelement="respond" data-replyto="Reply to Thomas" aria-label="Reply to Thomas">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-47159" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-60334">
+<div class="comment_header">
+<span class="comment_author">Vlad</span>
+<span class="comment_date">Jun 29, 2011 @ 15:19</span>
+</div>
+<div class="comment_text" id="comment-body-60334">
+<p>great post!</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-60334" data-commentid="60334" data-postid="243" data-belowelement="comment-body-60334" data-respondelement="respond" data-replyto="Reply to Vlad" aria-label="Reply to Vlad">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-60334" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-60861">
+<div class="comment_header">
+<span class="comment_author">Andrew</span>
+<span class="comment_date">Jul 20, 2011 @ 3:25</span>
+</div>
+<div class="comment_text" id="comment-body-60861">
+<p>+1 to Thomas suggestion.</p>
+<p>You MUST chmod 600 /swapfile1. Otherwise your box will get owned!</p>
+<p><a href="https://www.juniper.net/security/auto/vulnerabilities/vuln2678.html" rel="nofollow">http://www.juniper.net/security/auto/vulnerabilities/vuln2678.html</a></p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-60861" data-commentid="60861" data-postid="243" data-belowelement="comment-body-60861" data-respondelement="respond" data-replyto="Reply to Andrew" aria-label="Reply to Andrew">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-60861" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-61288">
+<div class="comment_header">
+<span class="comment_author">Adam</span>
+<span class="comment_date">Aug 4, 2011 @ 3:18</span>
+</div>
+<div class="comment_text" id="comment-body-61288">
+<p>So, after following these steps I received the notification that my root partition is full. And then, after rebooting, I cannot log into gnome. It will start gdm but will not go into gnome from there, it will only bring me back to gdm. startx does not work as well. So how do I do the oposite of this?</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-61288" data-commentid="61288" data-postid="243" data-belowelement="comment-body-61288" data-respondelement="respond" data-replyto="Reply to Adam" aria-label="Reply to Adam">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-61288" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-61980">
+<div class="comment_header">
+<span class="comment_author">John M</span>
+<span class="comment_date">Aug 29, 2011 @ 3:09</span>
+</div>
+<div class="comment_text" id="comment-body-61980">
+<p>You just have to:<br>
+-make sure the swap file is not active<br>
+swapon -s<br>
+-if it is active<br>
+swapoff /swapfile (or whatever you called it)<br>
+-comment out the line in your /etc/fstab file (Place a hashmark # in front of it or just delete the line)<br>
+-remove the swapfile:<br>
+rm /swapfile (or whatever you called it)</p>
+<p>Reboot and you should be away unless you want to create a smaller swap file in which case you should just make sure it isn’t in use, delete the file and recreate it using a smaller size.</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-61980" data-commentid="61980" data-postid="243" data-belowelement="comment-body-61980" data-respondelement="respond" data-replyto="Reply to John M" aria-label="Reply to John M">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-61980" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-63314">
+<div class="comment_header">
+<span class="comment_author">Ron</span>
+<span class="comment_date">Oct 9, 2011 @ 7:10</span>
+</div>
+<div class="comment_text" id="comment-body-63314">
+<p>Since kernel 2.6.31, you can use the util fallocate instead of dd on btrfs, ext4, ocfs2, and xfs filesystems. It’s *much* faster than dd on really big swap files.</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-63314" data-commentid="63314" data-postid="243" data-belowelement="comment-body-63314" data-respondelement="respond" data-replyto="Reply to Ron" aria-label="Reply to Ron">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-63314" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-63926">
+<div class="comment_header">
+<span class="comment_author">Simon McNair</span>
+<span class="comment_date">Oct 27, 2011 @ 14:45</span>
+</div>
+<div class="comment_text" id="comment-body-63926">
+<p>Hi Vivek,<br>
+5 years on and the page is still useful. Thanks :-)</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-63926" data-commentid="63926" data-postid="243" data-belowelement="comment-body-63926" data-respondelement="respond" data-replyto="Reply to Simon McNair" aria-label="Reply to Simon McNair">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-63926" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-66372">
+<div class="comment_header">
+<span class="comment_author">ravinder</span>
+<span class="comment_date">Jan 4, 2012 @ 20:15</span>
+</div>
+<div class="comment_text" id="comment-body-66372">
+<p>dd if=/dev/zero of=/swapfile1 bs=1024 count=524288<br>
+pls tell me the meaning and function of this command..why we are using if=/dev/zero and of=/swapfile..why this command started with dd..</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-66372" data-commentid="66372" data-postid="243" data-belowelement="comment-body-66372" data-respondelement="respond" data-replyto="Reply to ravinder" aria-label="Reply to ravinder">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-66372" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="comment-66416">
+<div class="comment_header">
+<span class="comment_author">John Mills</span>
+<span class="comment_date">Jan 5, 2012 @ 15:58</span>
+</div>
+<div class="comment_text" id="comment-body-66416">
+<p>dd is a command that does a low level copy of data from a to b. ‘if’ is the input file for the copy. /dev/zero is a device that generates as many null characters as it is asked to create and passes them on. ‘of’ is your output file or what will become your new (or additional) swapfile. the ‘/swapfile’ could be any name that you want it to be as long as you don’t forget what it is for the further manipulations. ‘bs’ is the block size of the file and ‘count’ is the number of bytes in the file. So, what the command does is takes 524288 null bytes from /dev/zero and puts them into /swapfile thus initially populating the file.</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-66416" data-commentid="66416" data-postid="243" data-belowelement="comment-body-66416" data-respondelement="respond" data-replyto="Reply to John Mills" aria-label="Reply to John Mills">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-66416" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-even depth-1" id="comment-68254">
+<div class="comment_header">
+<span class="comment_author">Sergio</span>
+<span class="comment_date">Mar 5, 2012 @ 18:14</span>
+</div>
+<div class="comment_text" id="comment-body-68254">
+<p>How do you increase the size of a swap file?</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-68254" data-commentid="68254" data-postid="243" data-belowelement="comment-body-68254" data-respondelement="respond" data-replyto="Reply to Sergio" aria-label="Reply to Sergio">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-68254" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="comment-68295">
+<div class="comment_header">
+<span class="comment_author">Simon McNair</span>
+<span class="comment_date">Mar 7, 2012 @ 11:52</span>
+</div>
+<div class="comment_text" id="comment-body-68295">
+<p>either create a new pagefile that’s larger mount it as swap, then umount the old swap and delete. then modify fstab as appropriate.</p>
+<p>or if it’s a lightly loaded machine you can unmount the swap create a larger swap and remount. This has the benefit that you can reuse the name ;-)</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-68295" data-commentid="68295" data-postid="243" data-belowelement="comment-body-68295" data-respondelement="respond" data-replyto="Reply to Simon McNair" aria-label="Reply to Simon McNair">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-68295" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment even depth-2" id="comment-68296">
+<div class="comment_header">
+<span class="comment_author">Simon McNair</span>
+<span class="comment_date">Mar 7, 2012 @ 11:56</span>
+</div>
+<div class="comment_text" id="comment-body-68296">
+<p>or…Of course you can create a 1gig file and just add that as swap as well. The only problem here is ensuring that the file is contiguous,</p>
+<p>i.e. 1x 3gb swap or 3x 1gb swap (swapfile1+swapfile2+swapfile3) or indeed 1x 2gb swap + 1x1gb swap.</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-68296" data-commentid="68296" data-postid="243" data-belowelement="comment-body-68296" data-respondelement="respond" data-replyto="Reply to Simon McNair" aria-label="Reply to Simon McNair">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-68296" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-68261">
+<div class="comment_header">
+<span class="comment_author">Andrew Cutler</span>
+<span class="comment_date">Mar 6, 2012 @ 4:40</span>
+</div>
+<div class="comment_text" id="comment-body-68261">
+<p>@Sergio, add another one. Or unmount the swap file and recreate a larger file.</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-68261" data-commentid="68261" data-postid="243" data-belowelement="comment-body-68261" data-respondelement="respond" data-replyto="Reply to Andrew Cutler" aria-label="Reply to Andrew Cutler">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-68261" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+<ul class="children">
+<li class="comment even depth-2" id="comment-97821">
+<div class="comment_header">
+<span class="comment_author">Ron</span>
+<span class="comment_date">Sep 4, 2013 @ 1:29</span>
+</div>
+<div class="comment_text" id="comment-body-97821">
+<p>“Or unmount the swap file and recreate a larger file.”</p>
+<p>Why, when (as you first suggested) adding another one is so simple?</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-97821" data-commentid="97821" data-postid="243" data-belowelement="comment-body-97821" data-respondelement="respond" data-replyto="Reply to Ron" aria-label="Reply to Ron">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-97821" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-68266">
+<div class="comment_header">
+<span class="comment_author">kikoko</span>
+<span class="comment_date">Mar 6, 2012 @ 11:29</span>
+</div>
+<div class="comment_text" id="comment-body-68266">
+<p>how to i increase swapfile to 2gig… or more im confused</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-68266" data-commentid="68266" data-postid="243" data-belowelement="comment-body-68266" data-respondelement="respond" data-replyto="Reply to kikoko" aria-label="Reply to kikoko">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-68266" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+<ul class="children">
+<li class="comment even depth-2" id="comment-68318">
+<div class="comment_header">
+<span class="comment_author">John Mills</span>
+<span class="comment_date">Mar 9, 2012 @ 16:47</span>
+</div>
+<div class="comment_text" id="comment-body-68318">
+<p>You did not really say where you confusion lies. You have one of two options. You can either add a second swap file with whatever size will bring the total up to 2 GB or you can delete the current swapfile and establish a new one that is 2 GB in size. I believe both scenarios are covered in the comments above as well as the initial article so you will have to be a little more explicit if you want help …</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-68318" data-commentid="68318" data-postid="243" data-belowelement="comment-body-68318" data-respondelement="respond" data-replyto="Reply to John Mills" aria-label="Reply to John Mills">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-68318" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-69584">
+<div class="comment_header">
+<span class="comment_author">uday</span>
+<span class="comment_date">May 30, 2012 @ 4:57</span>
+</div>
+<div class="comment_text" id="comment-body-69584">
+<p>thank u for a clarification of this doubt</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-69584" data-commentid="69584" data-postid="243" data-belowelement="comment-body-69584" data-respondelement="respond" data-replyto="Reply to uday" aria-label="Reply to uday">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-69584" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-69718">
+<div class="comment_header">
+<span class="comment_author">Natasha</span>
+<span class="comment_date">Jun 9, 2012 @ 10:28</span>
+</div>
+<div class="comment_text" id="comment-body-69718">
+<p>We tried to add a swap file on one server and now using above steps but now it is growing big.</p>
+<p>root@server [/]# df -h<br>
+Filesystem Size Used Avail Use% Mounted on<br>
+/dev/sda2 4.9G 3.9G 710M 85% /<br>
+tmpfs 1.9G 0 1.9G 0% /dev/shm<br>
+/dev/sda1 485M 86M 374M 19% /boot<br>
+/dev/sda6 176G 31G 136G 19% /home<br>
+/dev/sda5 20G 6.6G 12G 36% /usr<br>
+/dev/sda3 29G 6.3G 22G 23% /var<br>
+/usr/tmpDSK 485M 16M 444M 4% /tmp<br>
+root@server [/]# free -m<br>
+total used free shared buffers cached<br>
+Mem: 3810 3545 264 0 425 2288<br>
+-/+ buffers/cache: 831 2979<br>
+Swap: 2999 325 2674<br>
+root@server [/]# grep swap /etc/fstab<br>
+/swapfile swap swap defaults 0 0<br>
+root@server [/]# du -sch /swapfile<br>
+3.0G /swapfile<br>
+3.0G total<br>
+root@server [/]# </p>
+<p>Any solution ?</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-69718" data-commentid="69718" data-postid="243" data-belowelement="comment-body-69718" data-respondelement="respond" data-replyto="Reply to Natasha" aria-label="Reply to Natasha">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-69718" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-70015">
+<div class="comment_header">
+<span class="comment_author">JJ</span>
+<span class="comment_date">Jun 22, 2012 @ 4:46</span>
+</div>
+<div class="comment_text" id="comment-body-70015">
+<p>Thank you for this useful post :-)</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-70015" data-commentid="70015" data-postid="243" data-belowelement="comment-body-70015" data-respondelement="respond" data-replyto="Reply to JJ" aria-label="Reply to JJ">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-70015" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-70049">
+<div class="comment_header">
+<span class="comment_author">gpachov</span>
+<span class="comment_date">Jun 23, 2012 @ 11:20</span>
+</div>
+<div class="comment_text" id="comment-body-70049">
+<p>Thank you!</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-70049" data-commentid="70049" data-postid="243" data-belowelement="comment-body-70049" data-respondelement="respond" data-replyto="Reply to gpachov" aria-label="Reply to gpachov">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-70049" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-70236">
+<div class="comment_header">
+<span class="comment_author">Nadun</span>
+<span class="comment_date">Jul 3, 2012 @ 5:34</span>
+</div>
+<div class="comment_text" id="comment-body-70236">
+<p>Thanks alot<br>
+I was wondering to create my swap space due to out of space for oracle installation<br>
+so the precheck was failed<br>
+this gave me the correct result to over come my problem<br>
+no need to restart the OS, it will apply after creating the swap file<br>
+again very big thank for the support list</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-70236" data-commentid="70236" data-postid="243" data-belowelement="comment-body-70236" data-respondelement="respond" data-replyto="Reply to Nadun" aria-label="Reply to Nadun">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-70236" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-71514">
+<div class="comment_header">
+<span class="comment_author">YD</span>
+<span class="comment_date">Sep 9, 2012 @ 5:57</span>
+</div>
+<div class="comment_text" id="comment-body-71514">
+<p>Thanks a lot brother ! Saved a lot of effort on my tomcat dying silently.<br>
+ps (I’m a colleague of ashish gite)</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-71514" data-commentid="71514" data-postid="243" data-belowelement="comment-body-71514" data-respondelement="respond" data-replyto="Reply to YD" aria-label="Reply to YD">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-71514" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-73187">
+<div class="comment_header">
+<span class="comment_author">Daniel</span>
+<span class="comment_date">Nov 12, 2012 @ 13:36</span>
+</div>
+<div class="comment_text" id="comment-body-73187">
+<p>It help me to solve a problem using Riak, the OS was installed without swap partition.</p>
+<p>Thanks!</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-73187" data-commentid="73187" data-postid="243" data-belowelement="comment-body-73187" data-respondelement="respond" data-replyto="Reply to Daniel" aria-label="Reply to Daniel">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-73187" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-76680">
+<div class="comment_header">
+<span class="comment_author">Bernard's Cask</span>
+<span class="comment_date">Jan 9, 2013 @ 2:38</span>
+</div>
+<div class="comment_text" id="comment-body-76680">
+<p>Unless something else has an express need to access /swapfile1 by a block device mount point “swap” this presents MORE of a security risk NOT LESS. The second ‘/etc/fstab’ field should be “none”. Consider ‘/media/sda1/pagefile.sys none swap defaults 0 0’.<br>
+You have used the example ‘/swapfile1 swap swap defaults 0 0’. During init, otherwise unmounted TRUE block devices REQUIRE mounting “swap”–designated in the second field ‘/dev/sda3 swap auto defaults 0 0’. A generic swap-file (not on the root device) requires patching: that it’s device has been previously mounted in some rc script ‘mount /dev/sda1’ (assuming valid entry in /etc/fstab) along with an existing contiguous /swapfile1 (else create–use dd), ‘delay 1’ (must wait for completion), ‘mkswap /mnt/sda1/swapfile1’ must be rw (defaults) and compatible permissions for the device file system, and of course ‘swapon /mnt/sda1/swapfile1’.</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-76680" data-commentid="76680" data-postid="243" data-belowelement="comment-body-76680" data-respondelement="respond" data-replyto="Reply to Bernard&#39;s Cask" aria-label="Reply to Bernard&#39;s Cask">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-76680" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-77327">
+<div class="comment_header">
+<span class="comment_author">Chief Editor</span>
+<span class="comment_date">Jan 17, 2013 @ 17:02</span>
+</div>
+<div class="comment_text" id="comment-body-77327">
+<p>Thank you very much. I moved wordpress to AWS ec2 and started getting Database establishing error. I found that out of 1.7GB only 30-40 mb was left. Now with these steps I created additional 512 mb. Hope now I do not get any memory issue.</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-77327" data-commentid="77327" data-postid="243" data-belowelement="comment-body-77327" data-respondelement="respond" data-replyto="Reply to Chief Editor" aria-label="Reply to Chief Editor">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-77327" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-81589">
+<div class="comment_header">
+<span class="comment_author">DG</span>
+<span class="comment_date">Mar 7, 2013 @ 17:56</span>
+</div>
+<div class="comment_text" id="comment-body-81589">
+<p>A much faster way to create a 1GB swapfile is…</p>
+<p>dd if=/dev/zero of=/swapfile bs=1024 count=1 seek=1M</p>
+<p>This skips to the end of the swapfile and writes just one block leaving a giant “hole” that will be read as zeros. Disk space is allocated as the file is written to. Beware, you are allowed to create a swap file larger than you have free disk space.</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-81589" data-commentid="81589" data-postid="243" data-belowelement="comment-body-81589" data-respondelement="respond" data-replyto="Reply to DG" aria-label="Reply to DG">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-81589" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-81591">
+<div class="comment_header">
+<span class="comment_author">DG</span>
+<span class="comment_date">Mar 7, 2013 @ 17:58</span>
+</div>
+<div class="comment_text" id="comment-body-81591">
+<p>Nuts, ignore my last message. If you try to turn on swap using the above you will get…</p>
+<p># swapon /swapfile<br>
+swapon: /swapfile: skipping – it appears to have holes.</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-81591" data-commentid="81591" data-postid="243" data-belowelement="comment-body-81591" data-respondelement="respond" data-replyto="Reply to DG" aria-label="Reply to DG">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-81591" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-97575">
+<div class="comment_header">
+<span class="comment_author">Vishal Sapkal</span>
+<span class="comment_date">Aug 28, 2013 @ 18:22</span>
+</div>
+<div class="comment_text" id="comment-body-97575">
+<p>You can use simple way</p>
+<p># dd if=/dev/zero of=/opt/swapfile bs=1M count=1024</p>
+<p>1. block size is 1 MB<br>
+2. count=1024 means 1GB (swap file Size)<br>
+3. /opt/swapfile (location as you want swap file)<br>
+then<br>
+# mkswap /opt/swapfile<br>
+Do entry in Fstab<br>
+# swanon -a</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-97575" data-commentid="97575" data-postid="243" data-belowelement="comment-body-97575" data-respondelement="respond" data-replyto="Reply to Vishal Sapkal" aria-label="Reply to Vishal Sapkal">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-97575" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+<ul class="children">
+<li class="comment odd alt depth-2" id="comment-863247">
+<div class="comment_header">
+<span class="comment_author">I</span>
+<span class="comment_date">Jun 10, 2016 @ 19:36</span>
+</div>
+<div class="comment_text" id="comment-body-863247">
+<p>#Like?#<br>
+swapon /swapfile<br>
+swapoff -a<br>
+dd if=/dev/zero of=/opt/swapfile bs=1M count=5700<br>
+mkswap /opt/swapfile<br>
+swanon -a<br>
+sysctl vm.swappiness=100<br>
+swapon /swapfile<br>
+#</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-863247" data-commentid="863247" data-postid="243" data-belowelement="comment-body-863247" data-respondelement="respond" data-replyto="Reply to I" aria-label="Reply to I">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-863247" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-97820">
+<div class="comment_header">
+<span class="comment_author">Colin</span>
+<span class="comment_date">Sep 4, 2013 @ 1:23</span>
+</div>
+<div class="comment_text" id="comment-body-97820">
+<p>swapon -s is useful in showing how much swap space and on what drives. </p>
+<p>Normally I would prefer to make a swap partition rather then making a swap file. That way your swap space does not crash if your filesystem does. (ie if / has an issue, at least your swap memory is safer…. )</p>
+<p>Very helpful article. </p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-97820" data-commentid="97820" data-postid="243" data-belowelement="comment-body-97820" data-respondelement="respond" data-replyto="Reply to Colin" aria-label="Reply to Colin">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-97820" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-127400">
+<div class="comment_header">
+<span class="comment_author">Saurabh</span>
+<span class="comment_date">Apr 7, 2014 @ 6:31</span>
+</div>
+<div class="comment_text" id="comment-body-127400">
+<p>Ultimate ….i have no words for these documentation</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-127400" data-commentid="127400" data-postid="243" data-belowelement="comment-body-127400" data-respondelement="respond" data-replyto="Reply to Saurabh" aria-label="Reply to Saurabh">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-127400" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="comment-460131">
+<div class="comment_header">
+<span class="comment_author">Chris Puttick</span>
+<span class="comment_date">Dec 15, 2014 @ 6:22</span>
+</div>
+<div class="comment_text" id="comment-body-460131">
+<p>Typo: recommends should be recommend.</p>
+<p>Nice how-to :)</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-460131" data-commentid="460131" data-postid="243" data-belowelement="comment-body-460131" data-respondelement="respond" data-replyto="Reply to Chris Puttick" aria-label="Reply to Chris Puttick">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-460131" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="comment-495007">
+<div class="comment_header">
+<span class="comment_author">Thạnh Tú</span>
+<span class="comment_date">Jan 5, 2015 @ 13:17</span>
+</div>
+<div class="comment_text" id="comment-body-495007">
+<p>Where is swapfile1? I need to remove it</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-495007" data-commentid="495007" data-postid="243" data-belowelement="comment-body-495007" data-respondelement="respond" data-replyto="Reply to Thạnh Tú" aria-label="Reply to Thạnh Tú">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-495007" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+<ul class="children">
+<li class="comment even depth-2" id="comment-507643">
+<div class="comment_header">
+<span class="comment_author">John Mills</span>
+<span class="comment_date">Jan 13, 2015 @ 2:32</span>
+</div>
+<div class="comment_text" id="comment-body-507643">
+<p>Huh? Why do you think that you have to remove it? If it is a swap file, you really likely don’t want to remove it unless you want to constantly run out of memory …</p>
+<p>If you really do want to remove it, read the posts, everything is covered that I can think of including how to remove swap files.</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-507643" data-commentid="507643" data-postid="243" data-belowelement="comment-body-507643" data-respondelement="respond" data-replyto="Reply to John Mills" aria-label="Reply to John Mills">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-507643" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-638583">
+<div class="comment_header">
+<span class="comment_author">Joseph</span>
+<span class="comment_date">Apr 11, 2015 @ 6:25</span>
+</div>
+<div class="comment_text" id="comment-body-638583">
+<p>Thanks for the great tutorial!</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-638583" data-commentid="638583" data-postid="243" data-belowelement="comment-body-638583" data-respondelement="respond" data-replyto="Reply to Joseph" aria-label="Reply to Joseph">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-638583" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-746099">
+<div class="comment_header">
+<span class="comment_author">me</span>
+<span class="comment_date">Sep 16, 2015 @ 19:27</span>
+</div>
+<div class="comment_text" id="comment-body-746099">
+<p>swapon /swapfile1 should NOT be<br>
+one should edit /etc/fstab first then issue:<br>
+swapon -a<br>
+swap already up won’t be affected and this will also test if /etc/fstab is properly configured for swap.</p>
+<p>small thing I know, but is a nice optimization :P</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-746099" data-commentid="746099" data-postid="243" data-belowelement="comment-body-746099" data-respondelement="respond" data-replyto="Reply to me" aria-label="Reply to me">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-746099" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-780897">
+<div class="comment_header">
+<span class="comment_author">Rajeev Rumale</span>
+<span class="comment_date">Feb 16, 2016 @ 5:04</span>
+</div>
+<div class="comment_text" id="comment-body-780897">
+<p>Good document, Thanks for sharing the info</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-780897" data-commentid="780897" data-postid="243" data-belowelement="comment-body-780897" data-respondelement="respond" data-replyto="Reply to Rajeev Rumale" aria-label="Reply to Rajeev Rumale">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-780897" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-825855">
+<div class="comment_header">
+<span class="comment_author">shashi</span>
+<span class="comment_date">Apr 19, 2016 @ 7:30</span>
+</div>
+<div class="comment_text" id="comment-body-825855">
+<p>nice post, thanks.</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-825855" data-commentid="825855" data-postid="243" data-belowelement="comment-body-825855" data-respondelement="respond" data-replyto="Reply to shashi" aria-label="Reply to shashi">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-825855" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-910864">
+<div class="comment_header">
+<span class="comment_author">Akash</span>
+<span class="comment_date">Dec 8, 2016 @ 13:44</span>
+</div>
+<div class="comment_text" id="comment-body-910864">
+<p>Very nice post…</p>
+<p>I have one issue regarding the swapfile in Linux</p>
+<p>I am able to create the swapfile successfully and i ran the commands</p>
+<p>swapon -a</p>
+<p>swapfile is on, but the swap file is unused everytime i check</p>
+<p>when i check through the cmd “swapon -s” everytime i see that system is unable to use the swapfile.</p>
+<p>************:/ # swapon -s<br>
+Filename Type Size Used Priority<br>
+/swapfile file 100663292 0 -1</p>
+<p>Any idea that why it is unable to use the swapfile.</p>
+<p>Any help is highly appreciated.<br>
+Thanks in advance…</p>
+<p>Regards,<br>
+Akash</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-910864" data-commentid="910864" data-postid="243" data-belowelement="comment-body-910864" data-respondelement="respond" data-replyto="Reply to Akash" aria-label="Reply to Akash">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-910864" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-920106">
+<div class="comment_header">
+<span class="comment_author">vickey</span>
+<span class="comment_date">Apr 19, 2017 @ 13:00</span>
+</div>
+<div class="comment_text" id="comment-body-920106">
+<p>Didn’t works for me, have to enable it manually</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-920106" data-commentid="920106" data-postid="243" data-belowelement="comment-body-920106" data-respondelement="respond" data-replyto="Reply to vickey" aria-label="Reply to vickey">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-920106" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-933597">
+<div class="comment_header">
+<span class="comment_author">Divyeshbhai</span>
+<span class="comment_date">Feb 26, 2021 @ 7:21</span>
+ </div>
+<div class="comment_text" id="comment-body-933597">
+<p>Good information. I used and found easy and simple.</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-933597" data-commentid="933597" data-postid="243" data-belowelement="comment-body-933597" data-respondelement="respond" data-replyto="Reply to Divyeshbhai" aria-label="Reply to Divyeshbhai">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-933597" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-942023">
+<div class="comment_header">
+<span class="comment_author">Raju kaka</span>
+<span class="comment_date">Feb 21, 2022 @ 9:19</span>
+</div>
+<div class="comment_text" id="comment-body-942023">
+<p>Great tutorial from nixcraft.</p>
+</div>
+<div class="comment_footer">
+<a rel="nofollow" class="comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-942023" data-commentid="942023" data-postid="243" data-belowelement="comment-body-942023" data-respondelement="respond" data-replyto="Reply to Raju kaka" aria-label="Reply to Raju kaka">Reply</a>
+<a class="comment_permalink" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/?fbclid=IwAR2xLVTwo979I418KHPstAtjpqC1qKGbl90mcBF-_jFKoJKCDf_6T7EZ0oQ#comment-942023" title="permalink to this comment" rel="nofollow">Link</a>
+</div>
+</li>
+</ul>
+<div id="respond" class="comment-respond">
+<p class="comment-reply-title">Leave a Reply<a rel="nofollow" id="cancel-comment-reply-link" href="https://www.cyberciti.biz/faq/linux-add-a-swap-file-howto/#respond" style="display:none;">Cancel reply</a></p><form action="https://www.cyberciti.biz/faq/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message" aria-hidden="true">Required fields are marked <span class="required" aria-hidden="true">*</span></span></p><p class="comment-form-comment"><label for="comment">Comment <span class="required" aria-hidden="true">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name</label> <input id="author" name="author" type="text" value="" size="30" maxlength="245"></p>
+<p class="comment-form-email"><label for="email">Email</label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="243" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="1beb43dc99"></p><p style="display: none !important;"><label>Δ<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="1663511050178"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form> </div>
+<div style="font-size: 0.85em;">
+<span class="highlight">Use <acronym title="HyperText Markup Language">HTML</acronym> &lt;pre&gt;...&lt;/pre&gt; for code samples. Your comment will appear only after approval by the site admin.</span>
+</div>
+</div>
+<div class="prev_next text">
+<p class="next_post">Next FAQ: <a href="https://www.cyberciti.biz/faq/how-do-i-access-nas-server-using-automount/" rel="next">How do I access NAS server using automount?</a></p>
+<p class="previous_post">Previous FAQ: <a href="https://www.cyberciti.biz/faq/how-do-i-update-ubuntu-linux-softwares/" rel="prev">How Do I Update Ubuntu Linux Software Using Command Line?</a></p>
+</div>
+</div>
+<div class="sidebar">
+<div class="social-profiles">
+<a class="icon-social" href="mailto:webmaster@cyberciti.biz"></a>
+<a class="icon-social" href="https://www.patreon.com/nixcraft"></a>
+<a class="icon-social" href="https://twitter.com/nixcraft"></a>
+<a class="icon-social" href="https://www.youtube.com/user/nixcraftcom"></a>
+</div>
+<div class="widget_text widget widget_custom_html" id="custom_html-13"><div class="textwidget custom-html-widget"><script async="" src="./Linux Add a Swap File Tutorial - nixCraft_files/f.txt" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7825705102693166" data-ad-slot="3587683882" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><div class="widget_text widget widget_custom_html" id="custom_html-12"><div class="textwidget custom-html-widget"><center>
+<div style="text-transform: uppercase; color: rgb(204, 204, 204);">Search</div><br>
+<form method="GET" class="search-form" action="https://www.google.com/cse" target="_top"> <div class="search-form-inner"> <input name="cx" type="hidden" value="c8e444503670f107a"> <input name="ie" type="hidden" value="UTF-8"> <input class="nixcraftsearchbox" type="search" placeholder="🔎 To search, type &amp; hit enter..." name="q" required=""> </div> </form>
+</center></div></div><div class="widget_text widget widget_custom_html" id="custom_html-14"><div class="textwidget custom-html-widget"><script async="" src="./Linux Add a Swap File Tutorial - nixCraft_files/f.txt" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7825705102693166" data-ad-slot="9961520545" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><div class="widget_text widget widget_custom_html" id="custom_html-2"><h3 class="widget_title">FEATURED ARTICLES</h3><div class="textwidget custom-html-widget"><style>.topnum {
+    color: #ccc;
+    font-size: 40px;
+    float: left;
+    margin-top: -1px;
+    width: 15%;
+}
+</style>
+<div class="wp_rp_wrap">
+<div class="wp_rp_content">
+<ul class="related_post">
+<li><div class="topnum">1</div><a href="https://www.cyberciti.biz/open-source/30-cool-best-open-source-softwares-of-2013/">30 Cool Open Source Software I Discovered in 2013</a></li>
+<li><div class="topnum">2</div><a href="https://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html">30 Handy Bash Shell Aliases For Linux / Unix / Mac OS X</a></li>
+<li><div class="topnum">3</div><a href="https://www.cyberciti.biz/networking/nmap-command-examples-tutorials/">Top 32 Nmap Command Examples For Linux Sys/Network Admins</a></li>
+<li><div class="topnum">4</div><a href="https://www.cyberciti.biz/tips/php-security-best-practices-tutorial.html">25 PHP Security Best Practices For Linux Sys Admins</a></li>
+<li><div class="topnum">5</div><a href="https://www.cyberciti.biz/tips/top-linux-monitoring-tools.html">30 Linux System Monitoring Tools Every SysAdmin Should Know</a></li>
+<li><div class="topnum">6</div><a href="https://www.cyberciti.biz/tips/linux-security.html">40 Linux Server Hardening Security Tips</a></li>
+<li><div class="topnum">7</div><a href="https://www.cyberciti.biz/tips/linux-iptables-examples.html">Linux: 25 Iptables Netfilter Firewall Examples For New SysAdmins</a></li>
+<li><div class="topnum">8</div><a href="https://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html">Top 20 OpenSSH Server Best Security Practices </a></li>
+<li><div class="topnum">9</div><a href="https://www.cyberciti.biz/tips/linux-unix-bsd-nginx-webserver-security.html">Top 25 Nginx Web Server Best Security Practices</a></li>
+<li><div class="topnum">10</div><a href="https://www.cyberciti.biz/tips/my-10-unix-command-line-mistakes.html">My 10 UNIX Command Line Mistakes</a></li>
+</ul>
+</div>
+</div></div></div><div class="widget_text widget widget_custom_html" id="custom_html-15"><div class="textwidget custom-html-widget"><script async="" src="./Linux Add a Swap File Tutorial - nixCraft_files/f.txt" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7825705102693166" data-ad-slot="1540003379" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><div class="widget_text widget widget_custom_html" id="custom_html-19"><div class="textwidget custom-html-widget"><center><div style="text-transform: uppercase; font-weight: bold; color: #ccc;">Sign up for my newsletter</div>
+<a href="https://newsletter.cyberciti.biz/subscription?f=1ojtmiv8892KQzyMsTF4YPr1pPSAhX2rq7Qfe5DiHMgXwKo892di4MTWyOdd976343rcNR6LhdG1f7k9H8929kMNMdWu3g"><img title="Email Subscription" src="./Linux Add a Swap File Tutorial - nixCraft_files/inbox-sign-up.webp" alt="Sign up for my newsletter" width="300" height="141" data-lazy-src="https://www.cyberciti.biz/media/new/cms/2021/01/inbox-sign-up.002.jpeg" data-ll-status="loaded" class="entered lazyloaded"><noscript><img title="Email Subscription" src="https://www.cyberciti.biz/media/new/cms/2021/01/inbox-sign-up.002.jpeg" alt="Sign up for my newsletter" width="300" height="141" /></noscript></a></center></div></div><div class="widget_text widget widget_custom_html" id="custom_html-18"><div class="textwidget custom-html-widget"><style>.morenum {
+    color: #ccc;
+    font-size: 40px;
+    float: left;
+    width: 15%;
+}
+ul.cbz_site_links li{
+	position: relative;
+	list-style: none;
+	padding: 10px 0 10px 0;
+	margin: 0;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	background: none;
+}
+ul.cbz_site_links {
+    margin: 0 0 18px 0;
+    padding: 0;
+}
+</style>
+<ul class="cbz_site_links">
+<li><div class="morenum">➔</div><a title="Linux Shell Scripting Tutorial Wiki" href="https://bash.cyberciti.biz/guide/Main_Page">Linux shell scripting tutorial</a></li>
+<li><div class="morenum">➔</div><a href="https://www.cyberciti.com/atom/atom.xml" title="Get updates using RSS feed">RSS/Feed</a></li>
+<li><div class="morenum">➔</div><a href="https://www.cyberciti.biz/tips/about-us" title="About nixCraft">About nixCraft</a></li>
+</ul></div></div><div class="social-profiles">
+<a class="icon-social" href="mailto:webmaster@cyberciti.biz"></a>
+<a class="icon-social" href="https://www.patreon.com/nixcraft"></a>
+<a class="icon-social" href="https://twitter.com/nixcraft"></a>
+<a class="icon-social" href="https://www.youtube.com/user/nixcraftcom"></a>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div class="container">
+<center> <div class="text_box">
+©2002-2022 nixCraft • <a href="https://www.cyberciti.biz/tips/privacy" title="Privacy policy">Privacy</a> • <a href="https://www.cyberciti.biz/tips/disclaimer" title="Term of Service">ToS</a> • <a href="https://www.cyberciti.biz/tips/contact-us" title="Contact us via Email">Contact/Email</a> • Corporate patron <a href="https://www.cyberciti.biz/tips/nixcraft-sponsors" title="Corporate patron">Linode &amp; Cloudflare</a>
+</div>
+</center></div>
+</div>
+<script type="text/javascript" src="./Linux Add a Swap File Tutorial - nixCraft_files/comment-reply.min.js" id="comment-reply-js" defer=""></script>
+<script defer="" type="text/javascript" src="./Linux Add a Swap File Tutorial - nixCraft_files/akismet-frontend.js" id="akismet-frontend-js"></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async="" src="./Linux Add a Swap File Tutorial - nixCraft_files/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script>
+<script async="" src="./Linux Add a Swap File Tutorial - nixCraft_files/js(1)"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8G0BR7WCTH');
+</script>
+<script>"use strict";function wprRemoveCPCSS(){var preload_stylesheets=document.querySelectorAll('link[data-rocket-async="style"][rel="preload"]');if(preload_stylesheets&&0<preload_stylesheets.length)for(var stylesheet_index=0;stylesheet_index<preload_stylesheets.length;stylesheet_index++){var media=preload_stylesheets[stylesheet_index].getAttribute("media")||"all";if(window.matchMedia(media).matches)return void setTimeout(wprRemoveCPCSS,200)}var elem=document.getElementById("rocket-critical-css");elem&&"remove"in elem&&elem.remove()}window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link href="https://www.cyberciti.biz/faq/wp-content/thesis/boxes/thesis-social-profiles/icons.css" rel="stylesheet" /><link href="https://www.cyberciti.biz/faq/wp-content/thesis/skins/focus/css.css?v=1660623749" rel="stylesheet" /></noscript>
+
+<iframe name="googlefcPresent" style="width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px; display: none;" src="./Linux Add a Swap File Tutorial - nixCraft_files/saved_resource.html"></iframe><iframe name="__tcfapiLocator" src="./Linux Add a Swap File Tutorial - nixCraft_files/saved_resource(1).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="__uspapiLocator" src="./Linux Add a Swap File Tutorial - nixCraft_files/saved_resource(2).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcInactive" src="./Linux Add a Swap File Tutorial - nixCraft_files/saved_resource(3).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcLoaded" src="./Linux Add a Swap File Tutorial - nixCraft_files/saved_resource(4).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe></body></html>
