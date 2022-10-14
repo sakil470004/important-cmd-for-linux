@@ -4,3 +4,8 @@
 
 //hostport on
 2.nmcli connection up sakil
+
+//suppose we want to kill firefox app and backgroud task
+pkill firefox
+//to force kill
+pkill -9 firefox
