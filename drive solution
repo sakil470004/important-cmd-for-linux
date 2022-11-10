@@ -1,5 +1,5 @@
 drive 2; read write able
-defaults,nodev,nosuid,uid=1000,gid=1000,uhelper=udisks2
+defaults,nodev,nosuid,uid=1000,gid=1000,uhelper=udisks2,nofail,x-gvfs-show,x-gvfs-name=Project
 drive 3; only read
 defaults,nls=utf8,umask=0222
 
@@ -8,3 +8,8 @@ defaults,nls=utf8,umask=0222
 chown username /media/Desired-UUID
 find uuid use blkid
 
+//for remove trash problem
+defaults,nodev,nosuid,uid=1000,gid=1000,uhelper=udisks2,nofail,x-gvfs-show,x-gvfs-name=Project
+
+mount point : /media/sdb5
+Identify as : /dev/sdb5
