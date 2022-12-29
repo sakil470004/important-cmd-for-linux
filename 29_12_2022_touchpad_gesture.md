@@ -14,3 +14,6 @@ https://github.com/JoseExposito/touche
 ওই লিংকে ইনস্টল করার পদ্ধতি দেওয়া আছে। এছাড়া flatpak ভার্সন ও ব্যবহার করতে পারেন flathub থেকে।
 Touchegg কে কনফিগার করার জন্য এই gui টুল। Gnome ব্যবহারকারীরা এর সাথে x11 gesture extension ব্যবহার করতে পারেন। https://extensions.gnome.org/extension/4033/x11-gestures/
 আশা করি, ল্যাপটপ ব্যবহারকারী যারা আছেন, তাদের উপকার হবে।
+
+## Gui in flatfunk
+https://flathub.org/apps/details/com.github.joseexposito.touche
