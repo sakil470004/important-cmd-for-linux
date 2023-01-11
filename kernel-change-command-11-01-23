@@ -1,0 +1,301 @@
+ 1  sudo apt update
+    2  sudo apt upgrade
+    3  touchegg
+    4  curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -~
+    5  curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+    6  sudo apt-get install nodejs
+    7  sudo npm install -g npm@latest
+    8  npm install -g npm@latest
+    9  npm -v
+   10  sudo apt install npm
+   11  npm -v
+   12  sudo npm install -g npm@latest
+   13  sudo apt install node
+   14  node -v
+   15  nodejs -v
+   16  sudo apt update
+   17  sudo apt upgrade
+   18  sudo apt install nodejs
+   19  sudo apt autoremove nodejs
+   20  sudo apt autoremove npm
+   21  npm -v
+   22  nodejs -v
+   23  curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+   24  sudo apt update
+   25  sudo apt-get install -y nodejs~
+   26  sudo apt-get install -y nodejs
+   27  node -v
+   28  sudo apt update
+   29  npm -v
+   30  sudo apt-get install yarn
+   31  sudo apt search corw
+   32  sudo apt search crow
+   33  sudo apt isntall gedit
+   34  sudo apt install gedit
+   35  sudo gedit /etc/systemd/system/hp-keycodes.service
+   36  sudo systemctl daemon-reload
+   37  sudo systemctl enable hp-keycodes.service
+   38  sudo reboot
+   39  sudo apt install smplayer qbittorrent
+   40  nautilus -v
+   41  nautilus
+   42  sudo apt search nautilus
+   43  terminal
+   44  sudo apt-get install guake
+   45  guake
+   46  make && sudo make install
+   47  xbright +500
+   48  xbright +2500
+   49  wget http://ftp.us.debian.org/debian/pool/contrib/m/msttcorefonts/ttf-mscorefonts-installer_3.8_all.deb
+   50  sudo dpkg -i ttf-mscorefonts-installer_3.8_all.deb
+   51  sudo apt install ubuntu-restricted-extras 
+   52  dpkg --configure
+   53  sudo dpkg --configure
+   54  sudo apt update
+   55  sudo apt upgrade
+   56  sudo apt purge rtl8821ce-dkms
+   57  sudo apt purge rtl8821ce-dkms
+   58  sudo apt upgrade
+   59  sudo apt install ubuntu-restricted-extras 
+   60  sudo apt update
+   61  sudo apt install gnome-tweaks
+   62  sudo apt install chrome-gnome-shell
+   63  sudo apt-get install chrome-gnome-shell
+   64  sudo apt autoremove chrome-gnome-shell 
+   65  sudo apt reinstall chrome-gnome-shell 
+   66  sudo apt install gnome-shell-extension-manager
+   67  sudo apt install guvcview
+   68  sudo apt install stacer 
+   69  sudo apt update
+   70  sudo apt install grub-efi grub2-common grub-customizer
+   71  sudo apt install grub-efi grub2-common 
+   72  sudo add-apt-repository ppa:trebelnik-stefina/grub-customizer
+   73  sudo apt update
+   74  sudo apt install grub-customizer
+   75  cd /media/sdb5/programming-hero/Milestone-1/module-2/
+   76  touch index.html
+   77  cd ~
+   78  gnome-system-monitor
+   79  tipc -v
+   80  sudo grub-install 
+   81  sudo grub-install
+   82  sudo update-grub
+   83  sudo cp /boot/grub/x86_64-efi/grub.efi /boot/efi/ls
+   84  sudo cp /boot/grub/x86_64-efi/grub.efi /boot/efi/EFI/systemd/systemd-bootx64.efi
+   85  exit
+   86  git -v
+   87  git --version
+   88  sudo apt install git
+   89  git clone https://github.com/sakil470004/naruto-group.git
+   90  code .
+   91  git config --global user.name "sk470004@gmail.com"
+   92  git config --global user.email "sk470004@gmail.com"
+   93  git config --global user.name "sakil470004"
+   94  ssh-keygen -t ed25519 -C "sk470004@gmail.com"
+   95  cat ~/.ssh/ssh_key_name.pub
+   96  cd ~
+   97  ls
+   98  cd .ssh
+   99  ls
+  100  cat ~/.ssh/id_ed25519.pub
+  101  eval "$(ssh-agent -s)"
+  102  cat ~/.ssh/id_ed25519
+  103  cat ~/.ssh/id_ed25519.pub
+  104  eval -h
+  105  ssh-keygen -t ed25519 -C "sk470004@gmail.com"
+  106  eval "$(ssh-agent -s)"
+  107  ssh-add ~/.ssh/id_ed25519
+  108  cat ~/.ssh/id_ed25519.pub
+  109  git clone https://github.com/ProgrammingHero1/html5-intro.git
+  110  cd naruto-group/
+  111  ls
+  112  git add .
+  113  git commit -m "adding border "
+  114  git push
+  115  git add .
+  116  git commit -m "test "
+  117  git add .
+  118  git commit -m "test "
+  119  git push
+  120  cd ..
+  121  cd Milestone-1/
+  122  cd module-4/
+  123  touch video-audio-download.html
+  124  cd sakil-pactice/
+  125  git init
+  126  git config --global init.defaultBranch main
+  127  git add README.md~
+  128  git add README.md
+  129  git add .
+  130  git commit -m "first commit"
+  131  git branch -M main
+  132  git remote add origin https://github.com/sakil470004/asta-fan.git
+  133  git push -u origin main
+  134  git init
+  135  git add .
+  136  git commit -m "1st commit "
+  137  git checkout
+  138  git branch --show-current
+  139  git remote add origin https://github.com/sakil470004/module-4.git
+  140  git push -u origin main
+  141  git remote remove origin https://github.com/sakil470004/module-4.git
+  142  git remote remove origin main
+  143  git remote remove  https://github.com/sakil470004/module-4.git
+  144  git remote -v
+  145  git remote remove origin
+  146  git remote -v
+  147  git remote add origin git@github.com:sakil470004/module-4.git
+  148  git push -u origin main
+  149  git add ,
+  150  git add .
+  151  git commit -m "adding color"
+  152  git push
+  153  kill crow
+  154  pkill crow
+  155  pkill corw
+  156  kill all crow
+  157  git init
+  158  git add origin git@github.com:sakil470004/asta-fan.git
+  159  git remote add origin git@github.com:sakil470004/asta-fan.git
+  160  git pull
+  161  git clone git@github.com:ProgrammingHero1/portfolio-resources.git
+  162  cd devel
+  163  cd developer-portfolio/
+  164  git init
+  165  cd ../..
+  166  git clone git@github.com:ProgrammingHero1/developer-portfolio.git
+  167  mkdir module-5.5
+  168  cd module-5.5/
+  169  ls
+  170  git clone git@github.com:ProgrammingHero1/donate-today.git
+  171  git init
+  172  git add .
+  173  git commit -m "first commit"
+  174  git remote add origin git@github.com:sakil470004/developer-portfolio.git~
+  175  git remote add origin git@github.com:sakil470004/developer-portfolio.git
+  176  git push -u origin main
+  177  git init
+  178  git add .
+  179  git commit -m "adding eveyting 1st time "
+  180  git clone git@github.com:ProgrammingHero1/new-year-new-me.git~
+  181  git clone git@github.com:ProgrammingHero1/new-year-new-me.git
+  182  sudo apt install copyq
+  183  sudo apt purge copyq
+  184  sudo apt autoremove
+  185  git push
+  186  git add .
+  187  git commit -m "finished "
+  188  git push
+  189  git clone git@github.com:ProgrammingHero1/pseudo-box.git
+  190  git clone git@github.com:ProgrammingHero1/more-css-and-animation.git
+  191  sudo ./install.sh 
+  192  git clone git@github.com:ProgrammingHero1/more-css-and-animation.git
+  193  sudo apt update
+  194  sudo apt install rtl8821ce-dkms 
+  195  dpkg --configre
+  196  dpkg --configure
+  197  sudo dpkg --configure
+  198  sudo dpkg --configure -z
+  199  sudo dpkg --configure -a
+  200  sudo apt purge rtl8821ce-dkms 
+  201  git clone git@github.com:tomaspinho/rtl8821ce.git
+  202  cd rtl8821ce/
+  203  sudo apt install bc module-assistant build-essential dkms
+  204  sudo apt remove --purge rtw8821-dkms
+  205  sudo apt remove --purge rtl8821ce-dkms
+  206  sudo apt install bc module-assistant build-essential dkms
+  207  sudo apt autoremove
+  208  sudo dpkg --configure -a 
+  209  sudo m-a prepare
+  210  sudo ./dkms-install.sh 
+  211  sudo apt install rtl8821ce-dkms 
+  212  reboot
+  213  sudo apt update
+  214  sudo apt upgrade
+  215  sudo ./dkms-remove.sh 
+  216  sudo ./dkms-install.sh 
+  217  sudo apt install rtl8821ce-dkms 
+  218  sudo apt update
+  219  dpkg --configure -a
+  220  sudo dpkg --configure -a
+  221  sudo apt-get autoremove rtl8821ce-dkms
+  222  sudo apt clean
+  223  sudo apt update
+  224  sudo apt clean
+  225  git clone https://github.com/tomaspinho/rtl8821ce
+  226  sudo apt autoclean
+  227  sudo apt install rtl8821ce-dkms 
+  228  sudo apt-get autoremove rtl8821ce-dkms
+  229  chmod +x dkms-install.sh
+  230  make
+  231  chmod +x dkms-install.sh
+  232  sudo ./dkms-install.sh
+  233  chmod +x dkms-remove.sh 
+  234  sudo ./dkms-remove.sh 
+  235  sudo ./dkms-install.sh
+  236  git clone git@github.com:ProgrammingHero1/website-layout.git
+  237  dpkg -l | grep linux-image
+  238  uname -a
+  239  uname -r
+  240  sudo apt update
+  241  apt-cache search linux-image
+  242  apt-cache search linux-image | grep generic
+  243  sudo apt install linux-image-5.15.0-40-generic
+  244  --kernelsourcedir
+  245  dpkg --kernelsourcedir
+  246  sudo apt update
+  247  uname a
+  248  uname -a
+  249  uname -r
+  250  dpkg -l | grep linux-image
+  251  apt-cache search linux-image | grep generic
+  252  sudo apt update
+  253  sudo apt install -y linux-headers-$(uname -r)
+  254  uname -r
+  255  dpkg -l | grep linux-image
+  256  sudo apt install -y linux-headers-5.15.0-40-generic
+  257  dpkg -l | grep linux-image
+  258  apt-cache search linux-image | grep generic
+  259  apt search linux-image | grep generic
+  260  uname -r
+  261  sudo apt search 5.15.0-30-generic
+  262  sudo apt instal linux-headers-5.15.0-30-generic
+  263  sudo apt install linux-headers-5.15.0-30-generic
+  264  sudo apt install linux-headers-5.15.0-30-generic linux-image-5.15.0-30-generic linux-modules-extra-5.15.0-30-generic
+  265  sudo apt search 5.15.0-30-generic
+  266  sudo apt search linux-headers-5.15.0-30
+  267  sudo apt search linux-headers-5.15.0-30_all
+  268  sudo update-grub
+  269  sudo apt update
+  270  sudo apt upgrade
+  271  uname -r
+  272  sudo apt purge rtl8821ce-dkms 
+  273  sudo apt install rtl8821ce-dkms 
+  274  sudo apt update
+  275  sudo apt install rtl8821ce-dkms 
+  276  sudo apt install bc module-assistant build-essential dkms
+  277  git clone git@github.com:tomaspinho/rtl8821ce.git
+  278  cd rtl8821ce/
+  279  sudo m-a prepare
+  280  sudo ./dkms-install.sh\
+  281  sudo ./dkms-install.sh --force
+  282  sudo ./dkms-remove.sh 
+  283  sudo ./dkms-install.sh
+  284  sudo apt update
+  285  sudo apt upgrade
+  286  sudo apt purge rtl8821ce-dkms 
+  287  uname -r
+  288  sudo ./dkms-remove.sh 
+  289  mkdir temp
+  290  cd temp
+  291  sudo apt purge rtl8821ce-dkms 
+  292  sudo ./dkms-install.sh
+  293  git clone git@github.com:tomaspinho/rtl8821ce.git
+  294  lsmod | grep 8821
+  295  sudo dkms status
+  296  dpkg -l | grep linux-image
+  297  apt list --installed | grep 6.0.12-76060006-generic
+  298  sudo apt autoremove linux-headers-6.0.12-76060006-generic linux-image-6.0.12-76060006-generic linux-modules-6.0.12-76060006-generic
+  299  sudo apt install rtl8821ce-dkms 
+  300  sudo -i
+  301  history
