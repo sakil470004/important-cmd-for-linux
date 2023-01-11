@@ -1,4 +1,4 @@
- 1  sudo apt update
+   1  sudo apt update
     2  sudo apt upgrade
     3  touchegg
     4  curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -~
@@ -298,4 +298,16 @@
   298  sudo apt autoremove linux-headers-6.0.12-76060006-generic linux-image-6.0.12-76060006-generic linux-modules-6.0.12-76060006-generic
   299  sudo apt install rtl8821ce-dkms 
   300  sudo -i
-  301  history
+  301  git clone git@github.com:tomaspinho/rtl8821ce.git
+  302  sudo gedit /etc/modprobe.d/blacklist.conf
+  303  cd rtl8821ce/
+  304  sudo m-a prepare
+  305  sudo ./dkms-install.sh 
+  306  history
+  307  apt list --installed | grep rtl8821ce
+  308  sudo apt update
+  309  sudo apt upgrade
+  310  sudo apt autoremove rtl8821ce
+  311  sudo apt autoremove rtl8821ce-dkms
+  312  sudo gedit
+  313  sudo gedit /etc/modprobe.d/dkms.conf
